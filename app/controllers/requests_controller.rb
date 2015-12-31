@@ -1,7 +1,4 @@
 class RequestsController < ApplicationController
-  before_action :authenticate_user!
-  load_and_authorize_resource
-  
   def index
     @requests = current_user.requests
   end
