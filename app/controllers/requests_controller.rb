@@ -7,18 +7,22 @@ class RequestsController < ApplicationController
   end
 
   def new
-    @request = Request.new
   end
 
   def create
-    @request = Request.new request_params
+    @request.user = current_user
     if @request.save
       flash[:success] = t ".success"
       redirect_to requests_path
     else
-      flash[:alert] = t ".alert"
       render :new
     end
+  end
+
+  def destroy
+    @request.destroy
+    flash[:success] = t ".delete"
+    redirect_to requests_path
   end
 
   private
