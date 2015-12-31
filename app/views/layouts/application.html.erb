@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title><%= t :home_head %></title>
-  <%= stylesheet_link_tag "application", media: "all",
-                          "data-turbolinks-track": true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track": true %>
-  <%= csrf_meta_tags %>
-  <%= render "layouts/shim" %>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
-<body>
-<%= render "layouts/header" %>
-<div class="container">
-  <div id="nav">
-    <%= t :language %>:
-    <%= link_to_unless_current t(:english), locale: "en" %>
-  </div>
-  <%= render "shared/flash_message" %>
-  <%= yield %>
-  <%= render "layouts/footer" %>
-</div>
-</body>
+  <head>
+    <title><%= t :home_head %></title>
+    <%= stylesheet_link_tag "application", media: "all",
+                            "data-turbolinks-track": true %>
+    <%= javascript_include_tag "application", "data-turbolinks-track": true %>
+    <%= csrf_meta_tags %>
+    <%= render "layouts/shim" %>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <%= render "layouts/header" %>
+    <div class="container">
+      <div id="nav">
+        <%= t :language %>:
+        <%= link_to_unless_current t(:english), locale: "en" %>
+      </div>
+      <%= render "shared/flash_message" %>
+      <%= yield %>
+      <%= render "layouts/footer" %>
+    </div>
+  </body>
 </html>
