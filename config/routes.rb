@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     get "about"=> "static_pages#about"
     get "contact"=> "static_pages#contact"
 
-    resources :requests, only: [:new, :create]
+    resources :requests, only: [:new, :create, :index]
     devise_for :users, controllers: {registrations: "registrations"}
   end
 end
