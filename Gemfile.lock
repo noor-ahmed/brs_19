@@ -91,6 +91,7 @@ GEM
     minitest (5.8.3)
     multi_json (1.11.2)
     mysql2 (0.4.2)
+    nested_form (0.3.2)
     nokogiri (1.6.7.1)
       mini_portile2 (~> 2.0.0.rc2)
     orm_adapter (0.5.0)
@@ -183,6 +184,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   mysql2
+  nested_form
   pry (~> 0.10.3)
   pry-byebug (~> 3.3)
   rails (= 4.2.5)

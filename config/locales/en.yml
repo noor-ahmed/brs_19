@@ -38,3 +38,13 @@ en:
   sign_in: Sign Up
   user: Welcome User
   users: Users
+  books_page_title: "Book"
+  books_new_add_new_book: "Add New Book"
+  book_form_book_title: "Book"
+  book_form_book_author: "Author"
+  book_form_book_num_of_pages: "Number of Pages"
+  book_form_book_category: "Category"
+  book_form_book_pubish_date: "Publish Date"
+  book_form_submit_button: "Submit"
+  books_new_failure_message: "Book creation is failed"
+  books_new_success_message: "Book creation is successful"
