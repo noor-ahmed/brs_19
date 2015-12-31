@@ -17,8 +17,24 @@ en:
   admin: "Welcome Admin"
   user: "Welcome User"
   hello: Hello world
+  home_head: Framgia Book Review System
+  home_message: More You Read, More You Learn
+  language: Language
+  logout: Log Out
+  my_profile: My Profile
   requests:
+    index:
+      author: Author
+      book_list: Requested Book List
+      cancel: Cancel
+      confirmation: Are you sure you want to cancel Book Request?
+      description: Description
+      link: Link
+      title: Title
     new:
-      title: Request new book
       alert: Request has not been submitted. Please Try again
       success: Successfully request for new book
+      title: Request new book
+  sign_in: Sign Up
+  user: Welcome User
+  users: Users

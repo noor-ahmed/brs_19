@@ -1,4 +1,9 @@
 class RequestsController < ApplicationController
+  before_action :authenticate_user!
+  def index
+    @requests = current_user.requests
+  end
+
   def new
     @request = Request.new
   end

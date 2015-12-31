@@ -1,0 +1,25 @@
+<div class="row">
+  <h1 class="text-capitalize"><%= t ".book_list" %></h1>
+  <br>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th><%= t ".title" %></th>
+        <th><%= t ".author" %></th>
+        <th><%= t ".description" %></th>
+        <th><%= t ".link" %></th>
+        <th></th>
+      </tr>
+    </thead>
+    <% @requests.each do |request|%>
+      <tr>
+        <td><%= request.title %></td>
+        <td><%= request.author %></td>
+        <td><%= request.description %></td>
+        <td><%= request.link %></td>
+        <td><%= link_to t ".cancel", request_path(request), method: :delete, 
+          data:{confirm: t ".confirmation"} %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>
