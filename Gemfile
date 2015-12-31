@@ -1,8 +1,8 @@
 source "https://rubygems.org"
+ruby "2.2.3"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails"
 gem "rails", "4.2.5"
-gem "mysql2"
 gem "devise"
 # Use sqlite3 as the database for Active Record
 # gem "sqlite3"
@@ -48,9 +48,17 @@ group :development, :test do
 end
 
 group :development do
+  gem "mysql2"
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem "web-console", "~> 2.0"
-
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem "spring"
+  gem "awesome_print", require:"ap"
+  gem "seed_dump"
+end
+
+group :production do
+  gem "pg",             "0.17.1"
+  gem "rails_12factor", "0.0.2"
+  # gem "puma",           "2.11.1"
 end
