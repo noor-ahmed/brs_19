@@ -7,6 +7,12 @@ Rails.application.routes.draw do
     get "contact"=> "static_pages#contact"
 
     resources :requests, only: [:new, :create, :index]
+    namespace :admin do
+      root "books#index"
+      resources :books
+    end
+
+    resources :requests, only: [:new, :create]
     devise_for :users, controllers: {registrations: "registrations"}
   end
 end
