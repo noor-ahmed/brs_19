@@ -3,7 +3,8 @@ class CreateRequests < ActiveRecord::Migration
     create_table :requests do |t|
       t.string :title
       t.string :author
-      t.integer :link
+      t.string :link
+      t.text :description
       t.integer :status
       t.references :user, index: true, foreign_key: true
 

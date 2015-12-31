@@ -84,13 +84,14 @@ ActiveRecord::Schema.define(version: 20151230080504) do
   add_index "relationships", ["follower_id"], name: "index_relationships_on_follower_id", using: :btree
 
   create_table "requests", force: :cascade do |t|
-    t.string   "title",      limit: 255
-    t.string   "author",     limit: 255
-    t.integer  "link",       limit: 4
-    t.integer  "status",     limit: 4
-    t.integer  "user_id",    limit: 4
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.string   "title",       limit: 255
+    t.string   "author",      limit: 255
+    t.string   "link",        limit: 255
+    t.text     "description", limit: 65535
+    t.integer  "status",      limit: 4
+    t.integer  "user_id",     limit: 4
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
   end
 
   add_index "requests", ["user_id"], name: "index_requests_on_user_id", using: :btree
