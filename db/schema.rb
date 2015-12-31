@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151230080504) do
+ActiveRecord::Schema.define(version: 20151231070216) do
 
   create_table "activities", force: :cascade do |t|
     t.integer  "type",       limit: 4
@@ -26,8 +26,9 @@ ActiveRecord::Schema.define(version: 20151230080504) do
 
   create_table "book_images", force: :cascade do |t|
     t.integer  "book_id",    limit: 4
-    t.datetime "created_at",           null: false
-    t.datetime "updated_at",           null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.string   "image",      limit: 255
   end
 
   add_index "book_images", ["book_id"], name: "index_book_images_on_book_id", using: :btree
