@@ -1,6 +1,14 @@
 Rails.application.routes.draw do
 
-  resources :requests, only: [:new, :create]
+  scope "(:locale)", locale: /en|jp/ do
+    root "static_pages#home"
+    get "home"=> "static_pages#home"
+    get "about"=> "static_pages#about"
+    get "contact"=> "static_pages#contact"
+
+    resources :requests, only: [:new, :create]
+  end
+end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -56,4 +64,3 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-end

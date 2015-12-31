@@ -6,11 +6,11 @@
                           "data-turbolinks-track": true %>
   <%= javascript_include_tag "application", "data-turbolinks-track": true %>
   <%= csrf_meta_tags %>
-  <%= render :shim %>
+  <%= render "layouts/shim" %>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-<%= render :header %>
+<%= render "layouts/header" %>
 <div class="container">
   <div id="nav">
     <%= t :language %>:
@@ -18,7 +18,7 @@
   </div>
   <%= render "shared/flash_message" %>
   <%= yield %>
-  <%= render :footer %>
+  <%= render "layouts/footer" %>
 </div>
 </body>
 </html>
