@@ -16,3 +16,9 @@ en:
   framgia: "Framgia Bangladesh Ltd."
   admin: "Welcome Admin"
   user: "Welcome User"
+  hello: Hello world
+  requests:
+    new:
+      title: Request new book
+      alert: Request has not been submitted. Please Try again
+      success: Successfully request for new book
