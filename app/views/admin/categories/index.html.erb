@@ -1,0 +1,17 @@
+<div class="row">
+  <h1 class="text-capitalize"><%= t ".page_tilte" %></h1>
+  <br>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th><%= t ".name" %></th>
+      <th></th>
+    </tr>
+    </thead>
+    <% @categories.each do |category|%>
+      <tr>
+        <td><%= link_to category.name, [:admin, category] %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>
