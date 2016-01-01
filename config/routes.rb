@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
 
-  devise_for :users, controllers: {registrations: "registrations"}
+  devise_for :users, controllers: {
+    registrations: "registrations",
+    sessions: "my_sessions"
+  }
 
   scope "(:locale)", locale: /en|jp/ do
     root "static_pages#home"
@@ -15,7 +18,7 @@ Rails.application.routes.draw do
     namespace :admin do
       root "users#show"
       resources :books
-      resources :categories, only: [:index, :new, :create, :show]
+      resources :categories, except: :destroy
       resources :requests, only: [:index]
     end
   end
