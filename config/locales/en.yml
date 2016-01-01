@@ -48,3 +48,8 @@ en:
   book_form_submit_button: "Submit"
   books_new_failure_message: "Book creation is failed"
   books_new_success_message: "Book creation is successful"
+  categories:
+    index:
+      page_tilte: All Categories
+      name: Name
+
