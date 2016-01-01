@@ -1,0 +1,17 @@
+<h1><%= t "all_users" %></h1>
+
+<table class="table">
+  <thead>
+    <th><%= t "name" %></th>
+    <th><%= t "email" %></th>
+  </thead>
+  <% @users.each do |user| %>
+    <tr>
+      <td>
+        <%= link_to user.name, user %>
+      </td>
+      <td><%= user.email %></td>
+    </tr>
+  <% end %>
+</table>
+
