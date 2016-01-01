@@ -4,6 +4,8 @@ en:
     categories:
       create:
         success: Category created successfully
+      edit:
+        title: Update category
       index:
         name: Name
         page_tilte: All Categories

@@ -1,5 +1,4 @@
 class Admin::CategoriesController < ApplicationController
-
   def index
   end
 
@@ -12,9 +11,20 @@ class Admin::CategoriesController < ApplicationController
   def create    
     if @category.save
       flash[:success] = t ".success"
-      redirect_to @category
+      redirect_to admin_category_path @category
     else
       render :new
+    end
+  end
+
+  def edit    
+  end
+
+  def update
+    if @category.update_attributes category_params
+      redirect_to admin_category_path @category
+    else
+      render :edit
     end
   end
 
@@ -22,6 +32,4 @@ class Admin::CategoriesController < ApplicationController
   def category_params
     params.require(:category).permit :id, :name, :image
   end
-
 end
-
