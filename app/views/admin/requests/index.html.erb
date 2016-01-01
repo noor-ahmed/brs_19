@@ -8,6 +8,7 @@
         <th><%= t ".author" %></th>
         <th><%= t ".description" %></th>
         <th><%= t ".link" %></th>
+        <th></th>
       </tr>
     </thead>
     <% @requests.each do |request|%>
@@ -16,6 +17,16 @@
         <td><%= request.author %></td>
         <td><%= request.description %></td>
         <td><%= request.link %></td>
+        <td>
+          <% if !request.approved? && !request.not_approved? %>
+            <%= form_for [:admin, request] do |f| %>
+              <td>
+                <%= f.hidden_field :status %>
+                <%= f.submit t ".not_approve", class: "btn btn-primary" %>
+              </td>
+            <% end %>
+          <% end %>
+        </td>
       </tr>
     <% end %>
   </table>

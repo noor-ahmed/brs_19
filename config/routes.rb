@@ -19,7 +19,7 @@ Rails.application.routes.draw do
       root "users#show"
       resources :books
       resources :categories, except: :destroy
-      resources :requests, only: [:index]
+      resources :requests, only: [:index, :update]
     end
   end
 end
