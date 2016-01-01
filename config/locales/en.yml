@@ -31,8 +31,8 @@ en:
       description: Description
       link: Link
       title: Title
+      delete: Successfully deleted request for new book
     new:
-      alert: Request has not been submitted. Please Try again
       success: Successfully request for new book
       title: Request new book
   sign_in: Sign Up
@@ -52,4 +52,3 @@ en:
     index:
       page_tilte: All Categories
       name: Name
-
