@@ -9,8 +9,7 @@ Rails.application.routes.draw do
     get "contact"=> "static_pages#contact"
 
     resources :requests, only: [:new, :create, :index]
-    resources :users
-
+    resources :users, only: [:index, :show, :edit, :update]
     namespace :admin do
       root "users#show"
       resources :books
