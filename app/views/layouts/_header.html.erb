@@ -3,23 +3,27 @@
     <%= link_to t(:home_head), root_path, id: "logo" %>
     <nav>
       <ul class="nav navbar-nav navbar-right">
-        <% if true %> <!-- if not register -->
-          <%= link_to t(:sign_up), new_user_registration_path, class: "btn btn-default" %>
-        <% else %> <!-- else user -->
-          <% if true %> <!-- if admin -->
-            <li><%= link_to t(:my_profile),"#", class: "btn btn-default" %></li>
-            <li><%= link_to t(:books),"#", class: "btn btn-default" %></li>
-            <li><%= link_to t(:users),"#", class: "btn btn-default" %></li>
-            <li><%= link_to t(:requests),"#", class: "btn btn-default" %></li>
-            <li><%= link_to t(:logout),"#", class: "btn btn-default" %></li>
-          <% else %> <!-- else user -->
-            <li><%= link_to t(:my_profile),"#", class: "btn btn-default" %></li>
-            <li><%= link_to t(:books),"#", class: "btn btn-default" %></li>
-            <li><%= link_to t(:users),"#", class: "btn btn-default"%></li>
-            <li><%= link_to t(:logout),"#", class: "btn btn-default" %></li>
+        <% if user_signed_in? %>
+          <% if current_user.admin? %>
+            <li><%= link_to t(:my_profile), current_user, class: "btn" %></li>
+            <li><%= link_to t(:books), admin_books_path, class: "btn" %></li>
+            <li><%= link_to t(:users), users_path, class: "btn" %></li>
+            <li><%= link_to t(:all_requests), requests_path, class: "btn" %></li>
+            <li><%= link_to t(:logout), :destroy_user_session, method: :delete,
+                   class: "btn" %></li>
+          <% else %>
+            <li><%= link_to t(:my_profile), current_user, class: "btn" %></li>
+            <li><%= link_to t(:books), books_path, class: "btn" %></li>
+            <li><%= link_to t(:users), users_path, class: "btn" %></li>
+            <li><%= link_to t(:logout), :destroy_user_session, method: :delete,
+                  class: "btn" %></li>
           <% end %>
+        <% else %>
+          <%= link_to t(:sign_up), new_user_registration_path,
+             class: "btn btn-default" %>
         <% end %>
       </ul>
     </nav>
   </div>
+  <div></div>
 </header>

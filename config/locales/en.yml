@@ -42,6 +42,7 @@ en:
   language: Language
   logout: Log Out
   my_profile: My Profile
+  all_requests: Requests
   requests:
     index:
       author: Author
