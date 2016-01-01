@@ -17,11 +17,18 @@ en:
         category_show: Category Details
     requests:
       index:
+        approve: Approve
         author: Author
         book_list: Requested New Book List
+        confirmation: Are you sure you want to cancel Book Request?
+        delete: Successfully Canceled Book Request
         description: Description
         link: Link
+        not_approve: Not Approve
         title: Title
+        success: Successfully approved
+        not_approve: Book Request has not been approved
+  all_requests: Requests
   book_form_book_author: Author
   book_form_book_category: Category
   book_form_book_num_of_pages: Number of Pages
@@ -44,7 +51,6 @@ en:
   language: Language
   logout: Log Out
   my_profile: My Profile
-  all_requests: Requests
   requests:
     index:
       author: Author
