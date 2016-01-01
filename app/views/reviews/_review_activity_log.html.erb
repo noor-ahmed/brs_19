@@ -8,10 +8,8 @@
             <%= t ".review_content" %>
             <%= review_activity.trackable.content %>
             <% key = review_activity.key %>
-            <%= key[7,key.length] << ".by" %>
-            <% first_name = review_activity.owner.first_name %>
-            <% last_name = review_activity.owner.last_name %>
-            <%= link_to "#{first_name+" "+last_name}", current_user %>
+            <%= key[7,key.length] << " by " %>
+            <%= review_activity.owner.email %>
             <%= time_ago_in_words review_activity.created_at %>
             <%= t ".activity_message_ago" %>
           </td>
