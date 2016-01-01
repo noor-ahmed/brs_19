@@ -48,14 +48,16 @@ en:
   book_form_submit_button: "Submit"
   books_new_failure_message: "Book creation is failed"
   books_new_success_message: "Book creation is successful"
-  categories:
-    index:
-      page_tilte: All Categories
-      name: Name
   admin:
     categories:
+      index:
+        page_tilte: All Categories
+        name: Name
       new:
         title: Create new category
         upload_image: Upload Image
       create:
         success: Category created successfully
+      show:
+        category_show: Category Details
+        book_under_category: Books Under This Category

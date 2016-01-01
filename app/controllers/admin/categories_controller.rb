@@ -1,6 +1,9 @@
 class Admin::CategoriesController < ApplicationController
+
   def index
-    @categories = Category.all
+  end
+
+  def show
   end
 
   def new
@@ -19,4 +22,6 @@ class Admin::CategoriesController < ApplicationController
   def category_params
     params.require(:category).permit :id, :name, :image
   end
+
 end
+
