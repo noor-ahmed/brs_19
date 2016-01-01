@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   before_action :set_locale
   before_action :authenticate_user!
   load_and_authorize_resource
-  
+
   rescue_from CanCan::AccessDenied do |exception|
     flash[:alert] = exception.message
     redirect_to root_path
