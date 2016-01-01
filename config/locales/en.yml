@@ -52,3 +52,10 @@ en:
     index:
       page_tilte: All Categories
       name: Name
+  admin:
+    categories:
+      new:
+        title: Create new category
+        upload_image: Upload Image
+      create:
+        success: Category created successfully
