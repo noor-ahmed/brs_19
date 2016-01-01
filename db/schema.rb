@@ -90,10 +90,10 @@ ActiveRecord::Schema.define(version: 20151231070216) do
     t.string   "author",      limit: 255
     t.string   "link",        limit: 255
     t.text     "description", limit: 65535
-    t.integer  "status",      limit: 4
+    t.integer  "status",      limit: 4,     default: 0
     t.integer  "user_id",     limit: 4
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
+    t.datetime "created_at",                            null: false
+    t.datetime "updated_at",                            null: false
   end
 
   add_index "requests", ["user_id"], name: "index_requests_on_user_id", using: :btree

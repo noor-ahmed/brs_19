@@ -1,15 +1,14 @@
 class Admin::RequestsController < ApplicationController
-  
   def index
-    @requests = Request.all
+    @requests = Request.pending
   end
 
   def update
-    if @request.not_approved!
-      flash[:success] = t ".not_approve"
-      redirect_to admin_requests_path
+    if @request.send "#{params[:request][:status]}!"
+      flash[:success] = I18n.t ".request_success"
     else
-      redirect_to admin_requests_path
+      flash[:alert] = I18n.t ".request_failed"
     end
+    redirect_to admin_requests_path
   end
 end

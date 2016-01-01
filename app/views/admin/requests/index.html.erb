@@ -18,12 +18,14 @@
         <td><%= request.description %></td>
         <td><%= request.link %></td>
         <td>
-          <% if !request.approved? && !request.not_approved? %>
-            <%= form_for [:admin, request] do |f| %>
-              <td>
-                <%= f.hidden_field :status %>
-                <%= f.submit t ".not_approve", class: "btn btn-primary" %>
-              </td>
+          <% if request.pending? %>
+            <%= form_for [:admin, request], method: :put do |f| %>
+              <%= f.hidden_field :status, value: "approved" %>
+              <%= f.submit t ".approve", class: "btn btn-primary" %>
+            <% end %>
+            <%= form_for [:admin, request], method: :put do |f| %>
+              <%= f.hidden_field :status, value: "not_approved" %>
+              <%= f.submit t ".not_approve", class: "btn btn-primary" %>
             <% end %>
           <% end %>
         </td>
