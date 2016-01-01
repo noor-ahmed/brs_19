@@ -19,4 +19,7 @@ class User < ActiveRecord::Base
                                    dependent:   :destroy
   has_many :followers, through: :passive_relationships, source: :follower
   enum role: [:user, :admin]
+  mount_uploader :image, UserImageUploader
+  validates :image, file_size: {less_than: 3.megabytes},
+    file_content_type: {allow: ["image/jpeg", "image/png"]}
 end

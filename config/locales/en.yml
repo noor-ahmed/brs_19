@@ -1,21 +1,34 @@
 en:
-  about: "About"
-  contact: "Contact"
-  home_head: "Framgia Book Review System"
-  home_message: "More You Read, More You Learn"
-  language: "Language"
-  form_contains: "The form contains "
-  error: "error"
-  english: "English"
-  my_profile: "My Profile"
-  books: "Books"
-  users: "Users"
-  logout: "Log Out"
-  requests: "Requests"
-  sign_up: "Sign Up"
-  framgia: "Framgia Bangladesh Ltd."
-  admin: "Welcome Admin"
-  user: "Welcome User"
+  about: About
+  admin:
+    categories:
+      create:
+        success: Category created successfully
+      index:
+        name: Name
+        page_tilte: All Categories
+      new:
+        title: Create new category
+        upload_image: Upload Image
+      show:
+        book_under_category: Books Under This Category
+        category_show: Category Details
+  book_form_book_author: Author
+  book_form_book_category: Category
+  book_form_book_num_of_pages: Number of Pages
+  book_form_book_pubish_date: Publish Date
+  book_form_book_title: Book
+  book_form_submit_button: Submit
+  books: Books
+  books_new_add_new_book: Add New Book
+  books_new_failure_message: Book creation is failed
+  books_new_success_message: Book creation is successful
+  books_page_title: Book
+  contact: Contact
+  english: English
+  error: error
+  form_contains: 'The form contains '
+  framgia: Framgia Bangladesh Ltd.
   hello: Hello world
   home_head: Framgia Book Review System
   home_message: More You Read, More You Learn
@@ -28,36 +41,17 @@ en:
       book_list: Requested Book List
       cancel: Cancel
       confirmation: Are you sure you want to cancel Book Request?
+      delete: Successfully deleted request for new book
       description: Description
       link: Link
       title: Title
-      delete: Successfully deleted request for new book
     new:
       success: Successfully request for new book
       title: Request new book
   sign_in: Sign Up
+  sign_up: Sign Up
   user: Welcome User
-  users: Users
-  books_page_title: "Book"
-  books_new_add_new_book: "Add New Book"
-  book_form_book_title: "Book"
-  book_form_book_author: "Author"
-  book_form_book_num_of_pages: "Number of Pages"
-  book_form_book_category: "Category"
-  book_form_book_pubish_date: "Publish Date"
-  book_form_submit_button: "Submit"
-  books_new_failure_message: "Book creation is failed"
-  books_new_success_message: "Book creation is successful"
-  admin:
-    categories:
-      index:
-        page_tilte: All Categories
-        name: Name
-      new:
-        title: Create new category
-        upload_image: Upload Image
-      create:
-        success: Category created successfully
-      show:
-        category_show: Category Details
-        book_under_category: Books Under This Category
+  users:
+    edit:
+      title: Update your profile picture
+      upload_image: Upload profile picture
