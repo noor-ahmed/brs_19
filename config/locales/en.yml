@@ -13,6 +13,13 @@ en:
       show:
         book_under_category: Books Under This Category
         category_show: Category Details
+    requests:
+      index:
+        author: Author
+        book_list: Requested New Book List
+        description: Description
+        link: Link
+        title: Title
   book_form_book_author: Author
   book_form_book_category: Category
   book_form_book_num_of_pages: Number of Pages
