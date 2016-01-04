@@ -24,9 +24,9 @@ en:
         delete: Successfully Canceled Book Request
         description: Description
         link: Link
-        not_approve: Book Request has not been approved
-        success: Successfully approved
+        not_approve: Not Approve
         title: Title
+        success: Successfully approved
     users:
       index:
         delete: Delete
@@ -39,6 +39,7 @@ en:
         my_favorites: My Favorites
       destroy:
         warning: You have successfully deleted an user.
+  all_requests: Requests
   book_form_book_author: Author
   book_form_book_category: Category
   book_form_book_num_of_pages: Number of Pages
@@ -91,6 +92,8 @@ en:
     new:
       success: Successfully request for new book
       title: Request new book
+  request_success: Request successfully processed
+  request_failed: Request can not be completed
   sign_in: Sign Up
   sign_up: Sign Up
   user: Welcome User

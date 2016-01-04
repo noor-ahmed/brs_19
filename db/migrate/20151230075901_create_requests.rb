@@ -5,7 +5,7 @@ class CreateRequests < ActiveRecord::Migration
       t.string :author
       t.string :link
       t.text :description
-      t.integer :status
+      t.integer :status, default: 0
       t.references :user, index: true, foreign_key: true
 
       t.timestamps null: false
