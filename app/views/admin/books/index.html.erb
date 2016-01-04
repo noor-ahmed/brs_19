@@ -1,0 +1,74 @@
+<% provide :title, t(:books_page_title) %>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <div class="panel-title">
+      <div class="clearfix">
+        <%= t :books_page_title %>
+        <div class="pull-right">
+          <%= link_to t(:book_index_create_btn), new_admin_book_path,
+            class: "btn btn-primary" %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="panel-body">
+    <table class="table table-striped table-bordered">
+      <thead>
+      <tr>
+        <th>
+          <%= t :book_model_title %>
+        </th>
+        <th>
+          <%= t :book_model_author %>
+        </th>
+        <th>
+          <%= t :book_model_publish_date %>
+        </th>
+        <th>
+          <%= t :book_model_number_of_pages %>
+        </th>
+        <th>
+          <%= t :book_model_category %>
+        </th>
+        <th>
+          <%= t :book_model_actions %>
+        </th>
+      </tr>
+      </thead>
+      <tbody>
+      <% @books.each do |book| %>
+        <tr>
+          <td>
+            <%= link_to book.title, admin_book_path(book) %>
+          </td>
+          <td>
+            <%= book.author %>
+          </td>
+          <td>
+            <%= book.publish_date %>
+          </td>
+          <td>
+            <%= book.num_of_pages %>
+          </td>
+          <td>
+            <%= book.category.name %>
+          </td>
+          <td>
+            <%= link_to t(:book_index_edit_btn), edit_admin_book_path(book),
+              class: "btn btn-xs btn-warning" %>
+            <%= link_to t(:book_index_delete_btn), admin_book_path(book),
+              method: :delete, data: {confirm: t(:make_sure)},
+              class: "btn btn-xs btn-danger" %>
+            <%= link_to t(:book_index_review_btn), "#",
+              class: "btn btn-xs btn-info" %>
+            <%= link_to t(:book_index_favorite_btn), "#",
+              class: "btn btn-xs btn-success" %>
+            <%= link_to t(:book_index_status_read_btn), "#",
+              class: "btn btn-xs btn-default" %>
+          </td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

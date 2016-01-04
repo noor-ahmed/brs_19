@@ -46,10 +46,23 @@ en:
   books_new_failure_message: Book creation is failed
   books_new_success_message: Book creation is successful
   books_page_title: Book
+  book_model_title: Title
+  book_model_author: Author
+  book_model_publish_date: Publish Date
+  book_model_number_of_pages: Pages
+  book_model_category: Category
+  book_model_actions: Actions
+  book_index_edit_btn: Edit
+  book_index_delete_btn: Delete
+  make_sure: Are You Sure?
+  book_index_create_btn: Add New Book
+  book_index_review_btn: review
+  book_index_favorite_btn: Add favorite
+  book_index_status_read_btn: Status
   contact: Contact
   english: English
   error: error
-  form_contains: 'The form contains '
+  form_contains: The form contains
   framgia: Framgia Bangladesh Ltd.
   hello: Hello world
   home_head: Framgia Book Review System
@@ -78,6 +91,7 @@ en:
   sign_in: Sign Up
   sign_up: Sign Up
   user: Welcome User
+  all_users: Users
   users:
     edit:
       title: Update your profile picture
