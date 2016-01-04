@@ -38,6 +38,7 @@ gem "rmagick"
 gem "faker", "~> 1.6", ">= 1.6.1"
 gem "cancancan", "~> 1.13", ">= 1.13.1"
 gem "file_validators", "~> 2.0", ">= 2.0.2"
+gem "bootstrap-datepicker-rails", "~> 1.5"
 
 group :development, :test do
   # Call "byebug" anywhere in the code to stop execution and get a debugger console

@@ -3,6 +3,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    @favourited_books = Book.favourited_by @user
   end
 
   def edit

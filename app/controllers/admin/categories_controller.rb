@@ -22,6 +22,7 @@ class Admin::CategoriesController < ApplicationController
 
   def update
     if @category.update_attributes category_params
+      flash[:success] = t ".success"
       redirect_to admin_category_path @category
     else
       render :edit
