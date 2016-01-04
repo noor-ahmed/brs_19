@@ -5,17 +5,17 @@
       <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in? %>
           <% if current_user.admin? %>
-            <li><%= link_to t(:my_profile), current_user, class: "btn" %></li>
-            <li><%= link_to t(:books), admin_books_path, class: "btn" %></li>
-            <li><%= link_to t(:users), users_path, class: "btn" %></li>
-            <li><%= link_to t(:all_requests), requests_path, class: "btn" %></li>
-            <li><%= link_to t(:logout), :destroy_user_session, method: :delete,
+            <li><%= link_to t(".my_profile"), current_user, class: "btn" %></li>
+            <li><%= link_to t(".books"), admin_books_path, class: "btn" %></li>
+            <li><%= link_to t(".users"), admin_users_path, class: "btn" %></li>
+            <li><%= link_to t(".requests"), admin_requests_path, class: "btn" %></li>
+            <li><%= link_to t(".logout"), :destroy_user_session, method: :delete,
                    class: "btn" %></li>
           <% else %>
-            <li><%= link_to t(:my_profile), current_user, class: "btn" %></li>
-            <li><%= link_to t(:books), books_path, class: "btn" %></li>
-            <li><%= link_to t(:users), users_path, class: "btn" %></li>
-            <li><%= link_to t(:logout), :destroy_user_session, method: :delete,
+            <li><%= link_to t(".my_profile"), current_user, class: "btn" %></li>
+            <li><%= link_to t(".books"), books_path, class: "btn" %></li>
+            <li><%= link_to t(".users"), users_path, class: "btn" %></li>
+            <li><%= link_to t(".logout"), :destroy_user_session, method: :delete,
                   class: "btn" %></li>
           <% end %>
         <% else %>
