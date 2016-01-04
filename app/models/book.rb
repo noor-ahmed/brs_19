@@ -7,4 +7,8 @@ class Book < ActiveRecord::Base
 
   accepts_nested_attributes_for :book_images, allow_destroy: true,
     reject_if: proc {|attributes| attributes["image"].blank?}
+  scope :favourited_by, ->(user) {
+    joins(users_books: :user).where(users: {id: user.id}, users_books: 
+      {favorite: true})
+  }
 end
