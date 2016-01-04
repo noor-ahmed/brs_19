@@ -1,10 +1,10 @@
 <h1><%= t ".title" %></h1>
-
 <table class="table">
   <thead>
     <th><%= t ".name" %></th>
     <th><%= t ".email" %></th>
     <th><%= t ".role" %></th>
+    <th><%= t ".delete" %></th>
   </thead>
   <% @users.each do |user| %>
     <tr>
@@ -13,6 +13,11 @@
       </td>
       <td><%= user.email %></td>
       <td><%= user.role %></td>
+      <td>
+        <%= link_to t(".delete"), admin_user_path(user),class: "btn btn-danger", 
+          method: :delete, data: {confirm: t("confirm_message")} unless 
+          user.admin? %>
+      </td>
     </tr>
   <% end %>
 </table>

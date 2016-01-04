@@ -17,7 +17,7 @@ Rails.application.routes.draw do
 
     namespace :admin do
       root "users#show"
-      resources :users, only: [:index, :show]
+      resources :users, only: [:index, :show, :destroy]
       resources :books
       resources :categories, except: :destroy
       resources :requests, only: [:index, :update]

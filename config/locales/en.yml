@@ -29,6 +29,7 @@ en:
         title: Title
     users:
       index:
+        delete: Delete
         email: Email
         name: Name
         role: Role
@@ -36,6 +37,8 @@ en:
       show:
         activities: Activities
         my_favorites: My Favorites
+      destroy:
+        warning: You have successfully deleted an user.
   book_form_book_author: Author
   book_form_book_category: Category
   book_form_book_num_of_pages: Number of Pages
