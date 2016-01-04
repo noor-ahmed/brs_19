@@ -1,11 +1,24 @@
 en:
   about: About
   admin:
+    books:
+      create:
+        success: Book created successfully
+        danger: Cannot create the book. It must have atleast one image.
+      edit:
+        title: Edit Book
+      new:
+        title: Add new book
+      update:
+        success: Book updated successfully
+        danger: Cannot update the book. It must have atleast one image.
     categories:
       create:
         success: Category created successfully
       edit:
         title: Update category
+      update:
+        success: Category updated successfully
       index:
         name: Name
         page_tilte: All Categories
@@ -28,6 +41,8 @@ en:
         title: Title
         success: Successfully approved
     users:
+      destroy:
+        warning: You have successfully deleted an user.
       index:
         delete: Delete
         email: Email
@@ -40,30 +55,27 @@ en:
       destroy:
         warning: You have successfully deleted an user.
   all_requests: Requests
+  all_users: Users
   book_form_book_author: Author
   book_form_book_category: Category
   book_form_book_num_of_pages: Number of Pages
   book_form_book_pubish_date: Publish Date
   book_form_book_title: Book
   book_form_submit_button: Submit
-  books_new_add_new_book: Add New Book
-  books_new_failure_message: Book creation is failed
-  books_new_success_message: Book creation is successful
-  books_page_title: Book
-  book_model_title: Title
-  book_model_author: Author
-  book_model_publish_date: Publish Date
-  book_model_number_of_pages: Pages
-  book_model_category: Category
-  book_model_actions: Actions
-  book_index_edit_btn: Edit
-  book_index_delete_btn: Delete
-  make_sure: Are You Sure?
   book_index_create_btn: Add New Book
-  book_index_review_btn: review
+  book_index_delete_btn: Delete
+  book_index_edit_btn: Edit
   book_index_favorite_btn: Add favorite
+  book_index_review_btn: review
   book_index_status_read_btn: Status
   submit: Submit
+  book_model_actions: Actions
+  book_model_author: Author
+  book_model_category: Category
+  book_model_number_of_pages: Pages
+  book_model_publish_date: Publish Date
+  book_model_title: Title
+  books_page_title: Book
   contact: Contact
   english: English
   error: error
@@ -80,6 +92,7 @@ en:
       my_profile: My Profile
       requests: Requests
       users: Users
+  make_sure: Are You Sure?
   requests:
     index:
       author: Author
@@ -98,7 +111,6 @@ en:
   sign_in: Sign Up
   sign_up: Sign Up
   user: Welcome User
-  all_users: Users
   users:
     edit:
       title: Update your profile picture
