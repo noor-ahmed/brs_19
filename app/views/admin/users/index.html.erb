@@ -4,6 +4,7 @@
   <thead>
     <th><%= t ".name" %></th>
     <th><%= t ".email" %></th>
+    <th><%= t ".role" %></th>
   </thead>
   <% @users.each do |user| %>
     <tr>
@@ -11,7 +12,7 @@
         <%= link_to user.name, user %>
       </td>
       <td><%= user.email %></td>
+      <td><%= user.role %></td>
     </tr>
   <% end %>
 </table>
-
