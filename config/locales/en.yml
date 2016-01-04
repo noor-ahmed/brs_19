@@ -33,6 +33,9 @@ en:
         name: Name
         role: Role
         title: All Users
+      show:
+        activities: Activities
+        my_favorites: My Favorites
   book_form_book_author: Author
   book_form_book_category: Category
   book_form_book_num_of_pages: Number of Pages

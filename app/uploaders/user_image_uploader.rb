@@ -24,6 +24,10 @@ class UserImageUploader < CarrierWave::Uploader::Base
   #   "/images/fallback/" + [version_name, "default.png"].compact.join('_')
   # end
 
+  def default_url(*args)
+    "/images/fallback/grey_81618-default-avatar-200x200.jpg"
+  end
+
   # Process files as they are uploaded:
   # process :scale => [200, 300]
   #
@@ -33,7 +37,7 @@ class UserImageUploader < CarrierWave::Uploader::Base
 
   # Create different versions of your uploaded files:
   version :thumb do
-    process resize_to_fit: [50, 50]
+    process resize_to_fit: [300, 300]
   end
 
   # Add a white list of extensions which are allowed to be uploaded.
@@ -47,5 +51,4 @@ class UserImageUploader < CarrierWave::Uploader::Base
   # def filename
   #   "something.jpg" if original_filename
   # end
-
 end
