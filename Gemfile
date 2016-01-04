@@ -23,10 +23,8 @@ gem "turbolinks"
 gem "jbuilder", "~> 2.0"
 # bundle exec rake doc:rails generates the API under doc/api.
 gem "sdoc", "~> 0.4.0", group: :doc
-
 # Use ActiveModel has_secure_password
 # gem "bcrypt", "~> 3.1.7"
-
 # Use Unicorn as the app server
 # gem "unicorn"
 
@@ -44,6 +42,7 @@ gem "file_validators", "~> 2.0", ">= 2.0.2"
 group :development, :test do
   # Call "byebug" anywhere in the code to stop execution and get a debugger console
   # gem "byebug"
+  gem "factory_girl_rails"
   gem "pry", "~> 0.10.3"
   gem "pry-byebug", "~> 3.3"
 end
