@@ -1,4 +1,6 @@
 class Book < ActiveRecord::Base
+  include PublicActivity::Model
+  tracked owner: ->(controller, model) {controller && controller.current_user}
   belongs_to :category
   has_many :users_books, dependent: :destroy
   has_many :users, through: :users_books

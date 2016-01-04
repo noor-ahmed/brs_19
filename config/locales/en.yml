@@ -75,6 +75,9 @@ en:
   book_model_number_of_pages: Pages
   book_model_publish_date: Publish Date
   book_model_title: Title
+  books_new_add_new_book: Add New Book
+  books_new_failure_message: Book creation is failed
+  books_new_success_message: Book creation is successful
   books_page_title: Book
   contact: Contact
   english: English
@@ -108,6 +111,12 @@ en:
       title: Request new book
   request_success: Request successfully processed
   request_failed: Request can not be completed
+  reviews:
+    review_activity_log:
+      activity_message_ago: ago
+      by: d by
+      review_content: Review with content
+      title_activities: Activity Log
   sign_in: Sign Up
   sign_up: Sign Up
   user: Welcome User

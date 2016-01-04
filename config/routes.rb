@@ -14,6 +14,7 @@ Rails.application.routes.draw do
     resources :requests, only: [:new, :create, :index, :destroy]
     resources :users, only: [:index, :show, :edit, :update]
     resources :books, only: [:index, :show]
+    resources :reviews
 
     namespace :admin do
       root "users#show"

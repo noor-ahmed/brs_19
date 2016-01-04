@@ -11,18 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160104125344) do
+ActiveRecord::Schema.define(version: 20160104111820) do
 
   create_table "activities", force: :cascade do |t|
-    t.integer  "type",       limit: 4
-    t.integer  "target_id",  limit: 4
-    t.string   "message",    limit: 255
-    t.integer  "user_id",    limit: 4
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.integer  "trackable_id",   limit: 4
+    t.string   "trackable_type", limit: 255
+    t.integer  "owner_id",       limit: 4
+    t.string   "owner_type",     limit: 255
+    t.string   "key",            limit: 255
+    t.text     "parameters",     limit: 65535
+    t.integer  "recipient_id",   limit: 4
+    t.string   "recipient_type", limit: 255
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
-  add_index "activities", ["user_id"], name: "index_activities_on_user_id", using: :btree
+  add_index "activities", ["owner_id", "owner_type"], name: "index_activities_on_owner_id_and_owner_type", using: :btree
+  add_index "activities", ["recipient_id", "recipient_type"], name: "index_activities_on_recipient_id_and_recipient_type", using: :btree
+  add_index "activities", ["trackable_id", "trackable_type"], name: "index_activities_on_trackable_id_and_trackable_type", using: :btree
 
   create_table "book_images", force: :cascade do |t|
     t.integer  "book_id",    limit: 4
@@ -144,7 +150,6 @@ ActiveRecord::Schema.define(version: 20160104125344) do
   add_index "users_books", ["book_id"], name: "index_users_books_on_book_id", using: :btree
   add_index "users_books", ["user_id"], name: "index_users_books_on_user_id", using: :btree
 
-  add_foreign_key "activities", "users"
   add_foreign_key "book_images", "books"
   add_foreign_key "books", "categories"
   add_foreign_key "comments", "reviews"
