@@ -1,5 +1,9 @@
 devise:
+  follow: Follow
+  followers: Followers
+  following: Following
   sign_up: Sign up
+  unfollow: Unfollow
 en:
   devise:
     confirmations:
