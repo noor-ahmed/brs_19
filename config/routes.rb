@@ -18,6 +18,7 @@ Rails.application.routes.draw do
     resources :relationships, only: [:create, :destroy]
     resources :activities
     resources :comments
+    resources :categories, only: [:index, :show]
 
     namespace :admin do
       root "users#show"
