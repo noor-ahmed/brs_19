@@ -28,6 +28,7 @@ en:
         category_show: Category Details
       update:
         success: Category updated successfully
+        delete: Delete
     requests:
       index:
         approve: Approve
@@ -54,6 +55,9 @@ en:
         my_favorites: My Favorites
   all_requests: Requests
   all_users: Users
+  delete: Delete
+  confirmation: Are You Sure?
+  delete_success: Delete Success
   book_form_book_author: Author
   book_form_book_category: Category
   book_form_book_num_of_pages: Number of Pages
@@ -144,3 +148,4 @@ en:
       name: Name
       page_tilte: All Categories
       title: All Users
+  confirmation: Are You Sure?
