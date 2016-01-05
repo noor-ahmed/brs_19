@@ -2,6 +2,8 @@ class ReviewsController < ApplicationController
   before_action :load_details, only: [:show, :edit]
   
   def show
+    @comment = current_user.comments.build
+    @comments = @review.comments.all.latest
   end
 
   def create

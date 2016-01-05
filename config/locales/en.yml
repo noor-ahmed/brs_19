@@ -130,6 +130,13 @@ en:
       activity_message_ago: ago
       commented: has been commented
       title_activities: Activity Log of Comment
+    comments:
+      ago: ago by
+      comments: Comments
+    form:
+      add_comment: Add Comment
+      comment: Comment
+      new_comment: Content
   confirmation: Are You Sure?
   contact: Contact
   delete: Delete
