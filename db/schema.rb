@@ -45,9 +45,9 @@ ActiveRecord::Schema.define(version: 20160104125344) do
     t.date     "publish_date"
     t.integer  "num_of_pages", limit: 4
     t.integer  "category_id",  limit: 4
-    t.datetime "created_at",                           null: false
-    t.datetime "updated_at",                           null: false
-    t.integer  "rating",       limit: 4,   default: 0
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
+    t.float    "rating",       limit: 24,  default: 0.0
   end
 
   add_index "books", ["category_id"], name: "index_books_on_category_id", using: :btree

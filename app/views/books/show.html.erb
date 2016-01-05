@@ -1,38 +1,129 @@
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <h1>
-      <%= @book.title.camelize %>
-    </h1>
-  </div>
-  <div class="panel-body">
-    <b><%= t ".book_author" %> : </b> <%= @book.author %>
-  </div>
-  <div class="panel-body">
-    <b><%= t ".book_publish_date" %> : </b> <%= @book.publish_date %>
-  </div>
-  <div class="panel-body">
-    <b><%= t ".book_num_of_pages" %> : </b> <%= @book.num_of_pages %>
-  </div>
-  <div class="panel-body">
-    <b><%= t ".book_category" %> : </b> <%= @book.category.name %>
-  </div>
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h1> <%= t ".review" %> </h1>
-    </div>
-    <% @reviews.each do |review| %>
-      <div class="panel-body">
-        <div><b><%= t ".content" %> : </b> <%= review.content %></div>
-        <div><b><%= t ".rating" %> : </b> <%= review.rating %></div>
-        <% if can?(:destroy, review) %>
-          <%= link_to t(".delete"), review_path(review), method: :delete,
-             data:{confirm: t(:confirmation) } %>
-        <% end %>
+<div id="blueimp-gallery" class="blueimp-gallery">
+  <div class="slides"></div>
+  <h3 class="title"></h3>
+  <a class="prev">‹</a>
+  <a class="next">›</a>
+  <a class="close">×</a>
+  <a class="play-pause"></a>
+  <ol class="indicator"></ol>
+  <div class="modal fade">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" aria-hidden="true">&times;</button>
+          <h4 class="modal-title"></h4>
+        </div>
+        <div class="modal-body next"></div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default pull-left prev">
+            <i class="glyphicon glyphicon-chevron-left"></i>
+            <%= t ".previous" %>
+          </button>
+          <button type="button" class="btn btn-primary next">
+            <%= t ".next" %>
+            <i class="glyphicon glyphicon-chevron-right"></i>
+          </button>
+        </div>
       </div>
-    <% end %>
-    <div class="panel-body">
-      <%= render "reviews/review_form" %>
     </div>
   </div>
 </div>
-
+<% provide :title, @book.title %>
+<div class="row">
+  <div class="col-md-3">
+    <div id="links">
+      <% @book_images.each do |book_image| %>
+        <a href="<%= book_image.image.url %>" data-gallery>
+          <%= image_tag book_image.image.url(:thumb), class: "img-thumbnail" %>
+        </a>
+      <% end %>
+    </div>    
+  </div>
+  <div class="col-md-9">
+    <div class="panel panel-success">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= t ".details" %></h3>
+      </div>
+      <div class="panel-body">
+        <dl class="dl-horizontal">
+          <dt><%= t ".title" %></dt>
+          <dd><%= @book.title %></dd>
+          <dt><%= t ".author" %></dt>
+          <dd><%= @book.author %></dd>
+          <dt><%= t ".publish_date" %></dt>
+          <dd><%= @book.publish_date %></dd>
+          <dt><%= t ".num_of_pages" %></dt>
+          <dd><%= @book.num_of_pages %></dd>
+          <dt><%= t ".category" %></dt>
+          <dd>
+            <%= link_to @book.category.name, category_path(@book.category) %>
+          </dd>
+          <dt><%= t ".rating" %></dt>
+          <dd><div id="rating" data-rating="<%= @book.rating %>"></div></dd>
+        </dl>
+      </div>
+    </div>
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= t ".actions" %></h3>
+      </div>
+      <div class="panel-body">
+          <div class="row">
+            <div class="col-md-4 col-md-offset-1">
+              <%= link_to t(".start_reading"), "#", class: "btn btn-info" %>
+            </div>
+            <div class="col-md-4">
+              <%= link_to t(".add_to_favorite"), "#", class: "btn btn-success" %>
+            </div>
+            <div class="col-md-3">
+              <%= link_to t(".request_book"), new_request_path, class: 
+                "btn btn-primary" %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          <h3 class="panel-title"><%= t ".reviews" %></h3>
+        </div>
+        <div class="panel-body">
+          <%= paginate @reviews %>
+          <%= page_entries_info @reviews %>
+          <div class="list-group">
+            <% @reviews.each do |review| %>
+              <%= link_to review.content, book_review_path(book_id: @book.id, id: 
+                review.id), class: "list-group-item" %>
+              <small class="col-md-offset-1">
+                <%= t ".by" %> <%= link_to review.user.name, user_path(review.user) %>
+              </small>
+              <% if can?(:destroy, review) %>
+                <small>
+                  <%= link_to t(".delete"), review_path(review), method: :delete,
+                      data:{confirm: t(:confirmation) } %>
+                </small>                
+              <% end %>
+            <% end %>
+          </div>
+          <%= paginate @reviews %>
+        </div>
+      </div>
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          <h3 class="panel-title"><%= t ".add_review" %></h3>
+        </div>
+        <div class="panel-body">
+          <%= form_for new_book_review_path(book_id: @book.id) do |f| %>
+            <div class="form-group">
+              <%= f.label :content %>
+              <%= f.text_area :content, class: "form-control" %>
+            </div>
+            <div class="form-group">
+              <%= f.label :rating %>
+              <%= f.number_field :rating, class: "form-control" %>
+            </div>
+            <center><%= f.submit t(".submit"), class: "btn btn-primary" %></center>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

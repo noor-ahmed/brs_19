@@ -1,0 +1,10 @@
+$(document).ready(function() {
+  $("#book_publish_date").datepicker({format: "dd/mm/yyyy"});
+  $("#rating").raty({
+    readOnly : true,
+    path : "/assets",
+    score : function() {
+      return $(this).attr("data-rating");
+    }
+  });
+});

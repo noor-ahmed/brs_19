@@ -6,5 +6,3 @@ namespace :book do
     end
   end
 end
-
-

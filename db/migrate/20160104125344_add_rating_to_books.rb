@@ -1,5 +1,5 @@
 class AddRatingToBooks < ActiveRecord::Migration
   def change
-    add_column :books, :rating, :integer, default: 0
+    add_column :books, :rating, :float, default: 0
   end
 end
