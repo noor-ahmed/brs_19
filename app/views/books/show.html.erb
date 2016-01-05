@@ -1,0 +1,33 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h1>
+      <%= @book.title.camelize %>
+    </h1>
+  </div>
+  <div class="panel-body">
+    <b><%= t ".book_author" %> : </b> <%= @book.author %>
+  </div>
+  <div class="panel-body">
+    <b><%= t ".book_publish_date" %> : </b> <%= @book.publish_date %>
+  </div>
+  <div class="panel-body">
+    <b><%= t ".book_num_of_pages" %> : </b> <%= @book.num_of_pages %>
+  </div>
+  <div class="panel-body">
+    <b><%= t ".book_category" %> : </b> <%= @book.category.name %>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h1> <%= t ".review" %> </h1>
+    </div>
+    <% @reviews.each do |review| %>
+      <div class="panel-body">
+        <div><b><%= t ".content" %> : </b> <%= review.content %></div>
+        <div><b><%= t ".rating" %> : </b> <%= review.rating %></div>
+      </div>
+    <% end %>
+    <div class="panel-body">
+      <%= render "reviews/review_form" %>
+    </div>
+  </div>
+</div>

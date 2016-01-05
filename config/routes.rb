@@ -16,6 +16,7 @@ Rails.application.routes.draw do
     resources :books, only: [:index, :show]
     resources :reviews
     resources :relationships, only: [:create, :destroy]
+    resources :activities
 
     namespace :admin do
       root "users#show"
@@ -23,7 +24,6 @@ Rails.application.routes.draw do
       resources :books
       resources :categories, except: :destroy
       resources :requests, only: [:index, :update]
-
     end
   end
 end

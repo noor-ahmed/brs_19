@@ -5,8 +5,7 @@ class Ability
     user ||= User.new
     if user.admin?
       can :manage, [Category, Book, BookImage, User, Request]
-    else
-      can :create, [Review, Request, Comment, Like, Relationship, UsersBook]
+    else      
       [Review, Request, Comment, Like, UsersBook].each do |item|
         can :manage, item do |object|
           user.send("#{item.underscore}s").include? object
@@ -16,6 +15,7 @@ class Ability
       can :manage, Relationship do |relationship|
         relationships.include? relationship
       end
+      can :create, [Review, Request, Comment, Like, Relationship, UsersBook]
     end
     can :read, :all
   end

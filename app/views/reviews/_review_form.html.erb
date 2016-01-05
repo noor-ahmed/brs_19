@@ -1,0 +1,14 @@
+<h3><%= t ".title" %></h3>
+<%= form_for Review.new do |f| %>
+  <div class="form-group">
+    <%= f.label :content %>
+    <%= f.text_area :content, placeholder: "Review", class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :rating %>
+    <%= f.number_field :rating, class: "text_field", step: 1, min: 0, max: 5 %>
+  </div>
+  <%= f.hidden_field :book_id, value: @book.id %>
+  <%= f.hidden_field :user_id, value: current_user.id %>
+  <%= f.submit class: "btn btn-primary" %>
+<% end %>

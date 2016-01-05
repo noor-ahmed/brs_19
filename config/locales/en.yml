@@ -3,22 +3,20 @@ en:
   admin:
     books:
       create:
-        success: Book created successfully
         danger: Cannot create the book. It must have atleast one image.
+        success: Book created successfully
       edit:
         title: Edit Book
       new:
         title: Add new book
       update:
-        success: Book updated successfully
         danger: Cannot update the book. It must have atleast one image.
+        success: Book updated successfully
     categories:
       create:
         success: Category created successfully
       edit:
         title: Update category
-      update:
-        success: Category updated successfully
       index:
         name: Name
         page_tilte: All Categories
@@ -28,6 +26,8 @@ en:
       show:
         book_under_category: Books Under This Category
         category_show: Category Details
+      update:
+        success: Category updated successfully
     requests:
       index:
         approve: Approve
@@ -38,8 +38,8 @@ en:
         description: Description
         link: Link
         not_approve: Not Approve
-        title: Title
         success: Successfully approved
+        title: Title
     users:
       destroy:
         warning: You have successfully deleted an user.
@@ -52,8 +52,6 @@ en:
       show:
         activities: Activities
         my_favorites: My Favorites
-      destroy:
-        warning: You have successfully deleted an user.
   all_requests: Requests
   all_users: Users
   book_form_book_author: Author
@@ -68,13 +66,21 @@ en:
   book_index_favorite_btn: Add favorite
   book_index_review_btn: review
   book_index_status_read_btn: Status
-  submit: Submit
   book_model_actions: Actions
   book_model_author: Author
   book_model_category: Category
   book_model_number_of_pages: Pages
   book_model_publish_date: Publish Date
   book_model_title: Title
+  books:
+    show:
+      book_author: Author
+      book_category: Book Category
+      book_num_of_pages: Number of Pages
+      book_publish_date: Publish Date
+      content: Content
+      rating: Rating
+      review: Review
   books_new_add_new_book: Add New Book
   books_new_failure_message: Book creation is failed
   books_new_success_message: Book creation is successful
@@ -99,6 +105,8 @@ en:
       requests: Requests
       users: Users
   make_sure: Are You Sure?
+  request_failed: Request can not be completed
+  request_success: Request successfully processed
   requests:
     index:
       author: Author
@@ -112,16 +120,19 @@ en:
     new:
       success: Successfully request for new book
       title: Request new book
-  request_success: Request successfully processed
-  request_failed: Request can not be completed
   reviews:
+    create:
+      alert: Review has not been posted
+      success: Successfully reviewed
     review_activity_log:
       activity_message_ago: ago
-      by: d by
       review_content: Review with content
       title_activities: Activity Log
+    review_form:
+      title: Create new Review
   sign_in: Sign Up
   sign_up: Sign Up
+  submit: Submit
   unfollow: Unfollow
   user: Welcome User
   users:
@@ -131,4 +142,5 @@ en:
     index:
       email: Email
       name: Name
+      page_tilte: All Categories
       title: All Users

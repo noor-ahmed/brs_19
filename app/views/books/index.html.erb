@@ -50,7 +50,7 @@
             <%= book.category.name %>
           </td>
           <td>
-            <%= link_to t(:book_index_review_btn), "#",
+            <%= link_to t(:book_index_review_btn), book_path(book),
                         class: "btn btn-xs btn-info" %>
             <%= link_to t(:book_index_favorite_btn), "#",
                         class: "btn btn-xs btn-success" %>
