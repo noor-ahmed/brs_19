@@ -1,9 +1,11 @@
 devise:
   follow: Follow
+  follow_activity: followed a user
   followers: Followers
   following: Following
   sign_up: Sign up
   unfollow: Unfollow
+  unfollow_activity: unfollowed a user
 en:
   devise:
     confirmations:

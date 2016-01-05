@@ -93,6 +93,7 @@ en:
   english: English
   error: error
   follow: Follow
+  follow_activity: "followed a user"
   followers: Followers
   following: Following
   form_contains: The form contains
@@ -138,6 +139,7 @@ en:
   sign_up: Sign Up
   submit: Submit
   unfollow: Unfollow
+  unfollow_activity: unfollowed a user
   user: Welcome User
   users:
     edit:
