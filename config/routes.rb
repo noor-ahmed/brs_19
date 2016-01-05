@@ -17,6 +17,7 @@ Rails.application.routes.draw do
     resources :reviews
     resources :relationships, only: [:create, :destroy]
     resources :activities
+    resources :comments
 
     namespace :admin do
       root "users#show"

@@ -1,0 +1,18 @@
+<div class="panel panel-default">
+  <div class="panel-body">
+  <h2><%= t ".title_activities" %></h2>
+    <table class= "table table-striped">
+      <% @comment_activities.each do |comment_activity| %>
+        <tr>
+          <td>
+            <%= comment_activity.trackable.review.content %>
+            <%= t ".commented" %>
+            <%= comment_activity.owner.email %>
+            <%= time_ago_in_words comment_activity.created_at %>
+            <%= t ".activity_message_ago" %>
+          </td>
+        </tr>
+      <% end %>
+    </table>    
+  </div>
+</div>

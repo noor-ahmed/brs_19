@@ -89,6 +89,11 @@ en:
   books_new_failure_message: Book creation is failed
   books_new_success_message: Book creation is successful
   books_page_title: Book
+  comments:
+    comment_activity_log:
+      activity_message_ago: ago
+      commented: has been commented
+      title_activities: Activity Log of Comment
   contact: Contact
   english: English
   error: error
