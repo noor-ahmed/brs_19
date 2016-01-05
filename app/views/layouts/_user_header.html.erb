@@ -1,0 +1,13 @@
+<li><%= link_to t(".books"), books_path %></li>
+<li><%= link_to t(".categories"), categories_path %></li>
+<li><%= link_to t(".users"), users_path %></li>
+<li class="dropdown">
+  <%= link_to  "#", class: "dropdown-toggle", data: {toggle: "dropdown"},
+    role: "button", aria: {haspopup: "true", expanded: "false"} do %>
+    <%= t ".requests" %> <span class="caret"></span>
+  <% end %>
+  <ul class="dropdown-menu">
+    <li><%= link_to t(".list"), requests_path %></li>
+    <li><%= link_to t(".add"), new_request_path %></li>
+  </ul>
+</li>

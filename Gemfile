@@ -40,6 +40,8 @@ gem "cancancan", "~> 1.13", ">= 1.13.1"
 gem "file_validators", "~> 2.0", ">= 2.0.2"
 gem "bootstrap-datepicker-rails", "~> 1.5"
 gem "public_activity"
+gem "Bootstrap-Image-Gallery-rails", "~> 1.0", ">= 1.0.1.3.1.0"
+gem "kaminari", "~> 0.16.3"
 
 group :development, :test do
   # Call "byebug" anywhere in the code to stop execution and get a debugger console
