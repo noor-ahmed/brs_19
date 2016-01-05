@@ -8,7 +8,7 @@ class Ability
     else      
       [Review, Request, Comment, Like, UsersBook].each do |item|
         can :manage, item do |object|
-          user.send("#{item.underscore}s").include? object
+          user.send("#{item.to_s.underscore}s").include? object
         end
       end
       relationships = user.active_relationships + user.passive_relationships

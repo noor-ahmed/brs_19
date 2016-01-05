@@ -24,6 +24,10 @@
       <div class="panel-body">
         <div><b><%= t ".content" %> : </b> <%= review.content %></div>
         <div><b><%= t ".rating" %> : </b> <%= review.rating %></div>
+        <% if can?(:destroy, review) %>
+          <%= link_to t(".delete"), review_path(review), method: :delete,
+             data:{confirm: t(:confirmation) } %>
+        <% end %>
       </div>
     <% end %>
     <div class="panel-body">
@@ -31,3 +35,4 @@
     </div>
   </div>
 </div>
+
