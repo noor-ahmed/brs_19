@@ -82,6 +82,9 @@ en:
   contact: Contact
   english: English
   error: error
+  follow: Follow
+  followers: Followers
+  following: Following
   form_contains: The form contains
   framgia: Framgia Bangladesh Ltd.
   hello: Hello world
@@ -119,6 +122,7 @@ en:
       title_activities: Activity Log
   sign_in: Sign Up
   sign_up: Sign Up
+  unfollow: Unfollow
   user: Welcome User
   users:
     edit:
