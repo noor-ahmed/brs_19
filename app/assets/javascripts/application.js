@@ -14,7 +14,6 @@
 //= require jquery_ujs
 //= require bootstrap-sprockets
 //= require bootstrap-datepicker/core
-//= require bootstrap
 //= require turbolinks
 //= require jquery_nested_form
 //= require blueimp-gallery

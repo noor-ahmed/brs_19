@@ -1,0 +1,27 @@
+en:
+  books:
+    show:
+      next: Next
+      previous: Previous
+  breadcrumbs:
+    application:
+      root: Index
+    pages:
+      pages: Pages
+  helpers:
+    actions: Actions
+    links:
+      back: Back
+      cancel: Cancel
+      confirm: Are you sure?
+      destroy: Delete
+      edit: Edit
+      new: New
+    titles:
+      delete: Delete %{model}
+      edit: Edit %{model}
+      new: New %{model}
+      save: Save %{model}
+  layouts:
+    header:
+      sign_in: Sign In
