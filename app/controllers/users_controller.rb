@@ -4,6 +4,7 @@ class UsersController < ApplicationController
 
   def show
     @favourited_books = Book.favourited_by @user
+    @activities = PublicActivity::Activity.all
   end
 
   def edit
