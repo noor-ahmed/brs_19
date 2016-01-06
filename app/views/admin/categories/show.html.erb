@@ -1,21 +1,7 @@
 <% provide :title, @category.name %>
 <div class="center">
-  <h1><%= t ".category_show" %></h1>
+  <h1><%= @category.name %></h1>
 </div>
+<h1 class="center"><%= t ".book_under_category" %></h1>
 
-<div class="panel panel-default panel-box">
-  <table class="table table-bordered table-striped">
-    <thead>
-    <tr>
-      <th><%= t ".book_under_category" %></th>
-    </tr>
-    </thead>
-    <tbody>
-      <% @category.books.each do |book| %>
-        <tr>
-          <td><%= link_to book.title, admin_book_path(book)  %></td>
-        </tr>
-      <% end %>
-    </tbody>
-    </table>
-</div>
+<%= render "books/grid", role_prefix: "admin_" %>
