@@ -5,11 +5,16 @@
     <thead>
     <tr>
       <th><%= t ".name" %></th>
+      <th><%= t ".delete" %></th>
     </tr>
     </thead>
     <% @categories.each do |category|%>
       <tr>
         <td><%= link_to category.name, admin_category_path(category) %></td>
+        <td>
+          <%= link_to t(".delete"), admin_category_path(category), method: 
+            :delete, class: "btn btn-danger", data: {confirm: t(".confirmation")} %>
+        </td>
       </tr>
     <% end %>
   </table>

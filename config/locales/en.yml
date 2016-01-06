@@ -18,6 +18,8 @@ en:
       edit:
         title: Update category
       index:
+        confirmation: Are you sure you want to delete this category?
+        delete: Delete
         name: Name
         page_tilte: All Categories
       new:
@@ -29,6 +31,8 @@ en:
       update:
         delete: Delete
         success: Category updated successfully
+      destroy:
+        warning: A category have been deleted successfully.
     requests:
       index:
         approve: Approve
@@ -83,7 +87,7 @@ en:
       add_review: Submit your review
       add_to_favorite: Add to favorite
       author: Author
-      by: '   --by '
+      by: "   --by "
       category: Category
       details: Book Details
       num_of_pages: Number of pages
