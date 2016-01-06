@@ -7,7 +7,6 @@ class User < ActiveRecord::Base
   has_many :reviews, dependent: :destroy
   has_many :requests, dependent: :destroy
   has_many :comments, dependent: :destroy
-  has_many :activities, dependent: :destroy
   has_many :likes, dependent: :destroy
   has_many :books, through: :users_books
   has_many :active_relationships, class_name:  Relationship.name,
@@ -22,6 +21,10 @@ class User < ActiveRecord::Base
   mount_uploader :image, UserImageUploader
   validates :image, file_size: {less_than: 3.megabytes},
     file_content_type: {allow: ["image/jpeg", "image/png"]}
+
+  scope :activities, ->(user) {
+    PublicActivity::Activity.order("created_at desc").where owner_id: user.id
+  }
 
   def follow other_user
     active_relationships.create followed_id: other_user.id

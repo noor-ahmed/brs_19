@@ -182,6 +182,9 @@ en:
         message: has started reading %{book_title} at %{at}
       favorite:
         message: has marked %{book_title} as favorite at %{at}
+    comment:
+      create:
+        message: has commented on a review of %{book_title} at %{at}
   request_failed: Request can not be completed
   request_success: Request successfully processed
   requests:
