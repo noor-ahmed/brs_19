@@ -30,7 +30,7 @@ class ReviewsController < ApplicationController
   def destroy
     @review.destroy
     flash[:success] = t ".delete_success"
-    redirect_to :back
+    redirect_to book_path params[:book_id]
   end
 
   private
@@ -41,5 +41,7 @@ class ReviewsController < ApplicationController
     @book = @review.book
     @book_images = @book.book_images
     @reviews = @book.reviews.page(params[:page]).per 10
+    @users_book = UsersBook.find_by_user_id_and_book_id(current_user, @book) || 
+      UsersBook.new
   end
 end
