@@ -1,0 +1,7 @@
+<% provide :title, @category.name %>
+<div class="center">
+  <h1><%= @category.name %></h1>
+</div>
+<h1 class="center"><%= t ".book_under_category" %></h1>
+
+<%= render "books/grid", role_prefix: "" %>
