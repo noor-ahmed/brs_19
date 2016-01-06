@@ -5,6 +5,7 @@ en:
     show:
       next: Next
       previous: Previous
+      show: show.html.erb
   breadcrumbs:
     application:
       root: Index

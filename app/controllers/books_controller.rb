@@ -8,5 +8,6 @@ class BooksController < ApplicationController
   def show
     @book_images = @book.book_images
     @reviews = @book.reviews.page(params[:page]).per 10
+    @review = Review.new
   end
 end
