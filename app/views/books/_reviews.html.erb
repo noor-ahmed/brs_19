@@ -16,8 +16,6 @@
           <small>
             <%= link_to t(".edit"), edit_book_review_path(book_id: @book.id,
               id: review), class: "btn btn-primary btn-xs" %>
-            <%= link_to t(".show"), book_review_path(book_id: @book.id,
-              id: review), class: "btn btn-primary btn-xs" %>
             <%= link_to t(".delete"), book_review_path(book_id: @book.id, 
               id: review), method: :delete, data:{confirm: t(:confirmation)}, 
               class: "btn btn-primary btn-xs" %>

@@ -3,7 +3,7 @@ class ReviewsController < ApplicationController
   
   def show
     @comment = current_user.comments.build
-    @comments = @review.comments.all.latest
+    @comments = @review.comments.all.from_last
   end
 
   def create
