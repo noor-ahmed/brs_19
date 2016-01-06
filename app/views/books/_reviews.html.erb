@@ -1,0 +1,25 @@
+<div class="panel panel-info">
+  <div class="panel-heading">
+    <h3 class="panel-title"><%= t ".reviews" %></h3>
+  </div>
+  <div class="panel-body">
+    <%= paginate @reviews %>
+    <%= page_entries_info @reviews %>
+    <div class="list-group">
+      <% @reviews.each do |review| %>
+        <%= link_to review.content, book_review_path(book_id: @book.id, id: 
+          review.id), class: "list-group-item" %>
+        <small class="col-md-offset-1">
+          <%= t ".by" %> <%= link_to review.user.name, user_path(review.user) %>
+        </small>
+        <% if can?(:destroy, review) %>
+          <small>
+            <%= link_to t(".delete"), review_path(review), method: :delete,
+              data:{confirm: t(:confirmation) } %>
+          </small>                
+        <% end %>
+      <% end %>
+    </div>
+    <%= paginate @reviews %>
+  </div>
+</div>
