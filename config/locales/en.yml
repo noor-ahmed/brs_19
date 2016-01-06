@@ -120,6 +120,7 @@ en:
   books_new_failure_message: Book creation is failed
   books_new_success_message: Book creation is successful
   books_page_title: Book
+  favorite: Favorite
   categories:
     index:
       all_categories: All Categories
@@ -144,7 +145,7 @@ en:
   english: English
   error: error
   follow: Follow
-  follow_activity: followed a user
+  follow_activity: followed
   followers: Followers
   following: Following
   form_contains: The form contains
@@ -153,6 +154,7 @@ en:
   home_head: Framgia Book Review System
   home_message: More You Read, More You Learn
   language: Language
+  mark_favorite: has marked %{book_title} as favorite at %{at}
   layouts:
     header:
       add: Add
@@ -175,6 +177,8 @@ en:
         message: has finished reading %{book_title} at %{at}
       reading:
         message: has started reading %{book_title} at %{at}
+      favorite:
+        message: has marked %{book_title} as favorite at %{at}
   request_failed: Request can not be completed
   request_success: Request successfully processed
   requests:
