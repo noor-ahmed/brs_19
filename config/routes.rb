@@ -18,8 +18,10 @@ Rails.application.routes.draw do
     end
     resources :relationships, only: [:create, :destroy]
     resources :activities
+    resources :likes
     resources :comments
     resources :categories, only: [:index, :show]
+
 
     namespace :admin do
       root "users#show"

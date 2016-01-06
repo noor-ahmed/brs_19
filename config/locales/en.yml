@@ -175,6 +175,9 @@ en:
       page_tilte: All Categories
       title: All Users
   confirmation: Are You Sure?
+  like: Like
+  unlike: Unlike
+
   categories:
     index:
       all_categories: All Categories
