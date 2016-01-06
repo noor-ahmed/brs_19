@@ -17,8 +17,8 @@
         <td><%= request.author %></td>
         <td><%= request.description %></td>
         <td><%= request.link %></td>
-        <td><%= link_to t ".cancel", request_path(request), method: :delete,
-          data:{confirm: t ".confirmation"} %></td>
+        <td><%= link_to t(".cancel"), request_path(request), method: :delete,
+          data:{confirm: t(".confirmation")} %></td>
       </tr>
     <% end %>
   </table>

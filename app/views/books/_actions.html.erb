@@ -5,7 +5,17 @@
   <div class="panel-body">
     <div class="row">
       <div class="col-md-4 col-md-offset-1">
-        <%= link_to t(".start_reading"), "#", class: "btn btn-info" %>
+        <% unless @users_book.read? %>
+          <%= form_for @users_book, url: book_users_books_path(@book), html: 
+            {method: :put} do |f| %>
+            <%= f.hidden_field :update_reading_status %>
+            <% if @users_book.new_record? %>
+              <%= f.submit t(".start_reading"), class: "btn btn-info" %>
+            <% else %>
+              <%= f.submit t(".complete_reading"), class: "btn btn-info" %>
+            <% end %>
+          <% end %>          
+        <% end %>        
       </div>
       <div class="col-md-4">
         <%= link_to t(".add_to_favorite"), "#", class: "btn btn-success" %>
