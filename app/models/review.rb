@@ -5,10 +5,19 @@ class Review < ActiveRecord::Base
   belongs_to :book
   has_many :comments, dependent: :destroy
 
+  after_save :update_book_rating
+  after_destroy :update_book_rating
+
   class << self
     def review_acitvities
       PublicActivity::Activity.order("created_at desc").
         where(trackable_type: "Review")
     end
+  end
+
+  private
+  def update_book_rating
+    book.rating = book.reviews.average "rating"
+    book.save
   end
 end
