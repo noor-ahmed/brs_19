@@ -1,0 +1,26 @@
+<div class="panel panel-info">
+  <div class="panel-heading">
+    <h3 class="panel-title"><%= t ".comments" %></h3>
+  </div>
+  <div class="panel-body">
+    <div class="list-group">
+      <% @comments.each do |comment| %>
+        <%= comment.content %>
+        <span class="timestamp">
+          <%= t "comments.commented" %>
+          <%= time_ago_in_words comment.created_at %>
+          <%= t ".ago" %> <%= comment.user.name %><br/>
+        </span>
+        <% if can? :destroy, comment %>
+          <%= link_to t(:delete), review_comment_path(@review, comment),
+            method: :delete, data: {confirm: t(:confirmation)},
+            class: "btn btn-danger" %>
+        <% end %>
+        <% if can? :edit, comment %>
+          <%= link_to t(:edit_text), edit_review_comment_path(@review, comment),
+            class: "btn btn-info" %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>

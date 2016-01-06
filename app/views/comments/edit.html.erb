@@ -1,0 +1,11 @@
+<h1><%= t "edit_comment" %></h1>
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <%= form_for @comment, url: review_comment_path(@review.id, @comment.id),
+      html: {method: :put} do |f| %>
+      <%= f.label :content %>
+      <%= f.text_field :content, class: "form-control" %>
+      <%= f.submit t (:edit_text), class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
