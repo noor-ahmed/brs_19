@@ -1,0 +1,18 @@
+<div class="panel panel-info">
+  <div class="panel-heading">
+    <h3 class="panel-title"><%= t ".add_review" %></h3>
+  </div>
+  <div class="panel-body">
+    <%= form_for new_book_review_path(book_id: @book.id) do |f| %>
+      <div class="form-group">
+        <%= f.label :content %>
+        <%= f.text_area :content, class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :rating %>
+        <%= f.number_field :rating, class: "form-control" %>
+      </div>
+      <center><%= f.submit t(".submit"), class: "btn btn-primary" %></center>
+    <% end %>
+  </div>
+</div>
