@@ -38,6 +38,9 @@ class Admin::BooksController < ApplicationController
   end
 
   def destroy
+    @book.destroy
+    flash[:warning] = t ".warning"
+    redirect_to admin_books_path
   end
 
   private

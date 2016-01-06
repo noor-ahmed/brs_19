@@ -12,9 +12,13 @@ en:
       update:
         danger: Cannot update the book. It must have atleast one image.
         success: Book updated successfully
+      destroy:
+        warning: A book has been deleted successfully.
     categories:
       create:
         success: Category created successfully
+      destroy:
+        warning: A category have been deleted successfully.
       edit:
         title: Update category
       index:
@@ -31,8 +35,6 @@ en:
       update:
         delete: Delete
         success: Category updated successfully
-      destroy:
-        warning: A category have been deleted successfully.
     requests:
       index:
         approve: Approve
@@ -80,6 +82,9 @@ en:
   books:
     review_edit_form:
       submit: Update Review
+    admin_actions:
+      confirmation: Ary you sure you want to delete this book?
+      delete: Delete
     review_form:
       submit: Add review
     search_form:
@@ -89,7 +94,7 @@ en:
       add_review: Submit your review
       add_to_favorite: Add to favorite
       author: Author
-      by: "   --by "
+      by: '   --by '
       category: Category
       details: Book Details
       num_of_pages: Number of pages
@@ -104,6 +109,11 @@ en:
   books_new_failure_message: Book creation is failed
   books_new_success_message: Book creation is successful
   books_page_title: Book
+  categories:
+    index:
+      all_categories: All Categories
+    show:
+      book_under_category: Books Under This Category
   comments:
     comment_activity_log:
       activity_message_ago: ago
@@ -139,6 +149,7 @@ en:
       sign_in: Sign In
       update_profile: Update profile
       users: All users
+  like: Like
   make_sure: Are You Sure?
   request_failed: Request can not be completed
   request_success: Request successfully processed
@@ -175,6 +186,7 @@ en:
   submit: Submit
   unfollow: Unfollow
   unfollow_activity: unfollowed a user
+  unlike: Unlike
   user: Welcome User
   users:
     edit:

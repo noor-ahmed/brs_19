@@ -4,8 +4,8 @@
     <%= render "books/image_gallery" %>
   </div>
   <div class="col-md-9">
-    <%= render "books/details" %>
-    <%= render "books/actions" %>
+    <%= render "books/details" %>    
+    <%= render role_prefix == "admin" ? "books/admin_actions" : "books/actions" %>
     <%= render "books/reviews" %>
     <%= render "books/review_form" %>
   </div>
