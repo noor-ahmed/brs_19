@@ -12,10 +12,6 @@
   <body>
     <%= render "layouts/header" %>
     <div class="container">
-      <div id="nav">
-        <%= t :language %>:
-        <%= link_to_unless_current t(:english), locale: "en" %>
-      </div>
       <%= render "shared/flash_message" %>
       <%= yield %>
       <%= render "layouts/footer" %>
