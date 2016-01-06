@@ -4,16 +4,6 @@
   </div>
   <div class="panel-body">
     <div class="row">
-      <div class="col-md-3 col-md-offset-1">
-        <%= link_to t(".start_reading"), "#", class: "btn btn-info" %>
-      </div>
-      <div class="col-md-3">
-        <%= link_to t(".add_to_favorite"), "#", class: "btn btn-success" %>
-      </div>
-      <div class="col-md-3">
-        <%= link_to t(".request_book"), new_request_path, class: 
-          "btn btn-primary" %>
-      </div>
       <div class="col-md-2">
         <%= link_to t(".delete"), admin_book_path(@book), method: :delete,
           class: "btn btn-danger", data: {confirm: t(".confirmation")} %>

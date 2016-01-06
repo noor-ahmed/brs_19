@@ -5,6 +5,8 @@ en:
       create:
         danger: Cannot create the book. It must have atleast one image.
         success: Book created successfully
+      destroy:
+        warning: A book has been deleted successfully.
       edit:
         title: Edit Book
       new:
@@ -12,8 +14,6 @@ en:
       update:
         danger: Cannot update the book. It must have atleast one image.
         success: Book updated successfully
-      destroy:
-        warning: A book has been deleted successfully.
     categories:
       create:
         success: Category created successfully
@@ -51,6 +51,7 @@ en:
       destroy:
         warning: You have successfully deleted an user.
       index:
+        confirmation: Are you sure you want to delete this user?
         delete: Delete
         email: Email
         name: Name
@@ -80,11 +81,14 @@ en:
   book_model_publish_date: Publish Date
   book_model_title: Title
   books:
-    review_edit_form:
-      submit: Update Review
+    actions:
+      complete_reading: Complete reading
+      start_reading: Start reading
     admin_actions:
       confirmation: Ary you sure you want to delete this book?
       delete: Delete
+    review_edit_form:
+      submit: Update Review
     review_form:
       submit: Add review
     review_show:

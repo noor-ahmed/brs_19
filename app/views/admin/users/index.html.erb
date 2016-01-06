@@ -14,9 +14,10 @@
       <td><%= user.email %></td>
       <td><%= user.role %></td>
       <td>
-        <%= link_to t(".delete"), admin_user_path(user),class: "btn btn-danger", 
-          method: :delete, data: {confirm: t("confirm_message")} unless 
-          user.admin? %>
+      <% unless user.admin? %>
+        <%= link_to t(".delete"), admin_user_path(user), class: "btn btn-danger", 
+          method: :delete, data: {confirm: t(".confirmation")} %>
+      <% end %>
       </td>
     </tr>
   <% end %>
