@@ -1,5 +1,7 @@
 en:
   books:
+    review_edit_form:
+      edit_review: Edit Review
     show:
       next: Next
       previous: Previous

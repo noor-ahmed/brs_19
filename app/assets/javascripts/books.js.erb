@@ -7,4 +7,17 @@ $(document).ready(function() {
       return $(this).attr("data-rating");
     }
   });
+
+  $("#rating_for_review").raty({
+    targetScore : "#rating_review",
+    path : "/assets"
+  });
+
+  $("#edit_rating_for_review").raty({
+    targetScore : "#edit_rating_review",
+    path : "/assets",
+    score : function() {
+      return $(this).attr("data-rating");
+    }
+  });
 });

@@ -14,7 +14,7 @@ Rails.application.routes.draw do
     resources :requests, only: [:new, :create, :index, :destroy]
     resources :users, only: [:index, :show, :edit, :update]
     resources :books, only: [:index, :show] do
-      resources :reviews
+      resources :reviews, except: :index
     end
     resources :relationships, only: [:create, :destroy]
     resources :activities
