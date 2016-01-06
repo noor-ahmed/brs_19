@@ -17,12 +17,15 @@ Rails.application.routes.draw do
       resources :reviews, except: :index
       resource :users_books, only: :update
     end
+
+    resources :reviews do
+      resources :comments
+    end
+
     resources :relationships, only: [:create, :destroy]
     resources :activities
     resources :likes
-    resources :comments
     resources :categories, only: [:index, :show]
-
 
     namespace :admin do
       root "users#show"
