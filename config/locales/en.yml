@@ -78,6 +78,8 @@ en:
   book_model_publish_date: Publish Date
   book_model_title: Title
   books:
+    review_edit_form:
+      submit: Update Review
     review_form:
       submit: Add review
     search_form:
@@ -161,8 +163,13 @@ en:
       activity_message_ago: ago
       review_content: Review with content
       title_activities: Activity Log
+    review_edit_form:
+      review: Review
+      title: Edit Review
     review_form:
       title: Create new Review
+    update:
+      update_success: Successfully review updated
   sign_in: Sign Up
   sign_up: Sign Up
   submit: Submit
