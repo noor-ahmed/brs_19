@@ -87,6 +87,12 @@ en:
       delete: Delete
     review_form:
       submit: Add review
+    review_show:
+      content: Content
+      details: Review Details
+      rating: Rating
+    reviews:
+      show: Show
     search_form:
       submit: Search
     show:
@@ -102,6 +108,7 @@ en:
       rating: Rating
       request_book: Request this book
       reviews: Reviews
+      show: Show
       start_reading: Start reading
       submit: Add review
       title: Title
@@ -168,7 +175,7 @@ en:
       title: Request new book
   reviews:
     create:
-      alert: Review has not been posted
+      failed: Review has not been posted
       success: Successfully reviewed
     review_activity_log:
       activity_message_ago: ago
@@ -179,6 +186,8 @@ en:
       title: Edit Review
     review_form:
       title: Create new Review
+    review_show:
+      content: Content
     update:
       update_success: Successfully review updated
   sign_in: Sign Up

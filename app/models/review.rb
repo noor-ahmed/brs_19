@@ -4,6 +4,7 @@ class Review < ActiveRecord::Base
   belongs_to :user
   belongs_to :book
   has_many :comments, dependent: :destroy
+  validates_presence_of :content
 
   after_save :update_book_rating
   after_destroy :update_book_rating

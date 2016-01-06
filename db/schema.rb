@@ -107,11 +107,11 @@ ActiveRecord::Schema.define(version: 20160104125344) do
 
   create_table "reviews", force: :cascade do |t|
     t.text     "content",    limit: 65535
-    t.integer  "rating",     limit: 4
+    t.integer  "rating",     limit: 4,     default: 0
     t.integer  "user_id",    limit: 4
     t.integer  "book_id",    limit: 4
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.datetime "created_at",                           null: false
+    t.datetime "updated_at",                           null: false
   end
 
   add_index "reviews", ["book_id"], name: "index_reviews_on_book_id", using: :btree

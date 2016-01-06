@@ -1,4 +1,9 @@
 class ReviewsController < ApplicationController
+  before_action :load_details, only: [:show, :edit]
+  
+  def show
+  end
+
   def create
     if @review.save
       flash[:success] = t ".success"
@@ -9,9 +14,6 @@ class ReviewsController < ApplicationController
   end
 
   def edit
-    @book = @review.book
-    @book_images = @book.book_images
-    @reviews = @book.reviews.page(params[:page]).per 10
   end
 
   def update
@@ -32,5 +34,10 @@ class ReviewsController < ApplicationController
   private
   def review_params
     params.require(:review).permit :content, :rating, :book_id, :user_id
+  end
+  def load_details
+    @book = @review.book
+    @book_images = @book.book_images
+    @reviews = @book.reviews.page(params[:page]).per 10
   end
 end
