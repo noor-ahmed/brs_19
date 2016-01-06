@@ -9,7 +9,7 @@
           <%= form_for @users_book, url: book_users_books_path(@book), html: 
             {method: :put} do |f| %>
             <%= f.hidden_field :update_reading_status %>
-            <% if @users_book.new_record? %>
+            <% if @users_book.new_record? || @users_book.unread? %>
               <%= f.submit t(".start_reading"), class: "btn btn-info" %>
             <% else %>
               <%= f.submit t(".complete_reading"), class: "btn btn-info" %>

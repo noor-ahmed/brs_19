@@ -169,6 +169,12 @@ en:
       users: All users
   like: Like
   make_sure: Are You Sure?
+  public_activity:
+    UsersBook:
+      read:
+        message: has finished reading %{book_title} at %{at}
+      reading:
+        message: has started reading %{book_title} at %{at}
   request_failed: Request can not be completed
   request_success: Request successfully processed
   requests:

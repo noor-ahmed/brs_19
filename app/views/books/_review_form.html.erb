@@ -2,8 +2,8 @@
   <div class="panel-heading">
     <h3 class="panel-title"><%= t ".add_review" %></h3>
   </div>
-  <div class="panel-body">
-    <%= form_for [@book, @review] do |f| %>
+  <div class="panel-body">  
+    <%= form_for @review, url: book_reviews_path(@book) do |f| %>
       <div class="form-group<%= get_error_class @review, :content %>">
         <%= f.label :content %>
         <%= f.text_area :content, class: "form-control" %>
