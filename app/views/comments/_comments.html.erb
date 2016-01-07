@@ -9,7 +9,7 @@
         <span class="timestamp">
           <%= t "comments.commented" %>
           <%= time_ago_in_words comment.created_at %>
-          <%= t ".ago" %> <%= comment.user.name %><br/>
+          <%= t ".ago" %> <%= link_to comment.user.name %><br/>
         </span>
         <% if can? :destroy, comment %>
           <%= link_to t(:delete), review_comment_path(@review, comment),
@@ -18,7 +18,7 @@
         <% end %>
         <% if can? :edit, comment %>
           <%= link_to t(:edit_text), edit_review_comment_path(@review, comment),
-            class: "btn btn-info" %>
+            class: "btn btn-info" %><br/>
         <% end %>
       <% end %>
     </div>
