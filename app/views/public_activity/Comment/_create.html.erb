@@ -1,7 +1,11 @@
 <% if activity.trackable %>
   <% book = activity.trackable.review.book %>
-  <%= raw t ".message", book_title: link_to(book.title, book_path(book)),
-    at: activity.updated_at %>
+  <% unless current_user.admin? %>
+    <%= raw t ".message", book_title: link_to(book.title, book_path(book)),
+      at: activity.updated_at %>
+  <% else %>
+    <%= raw t ".message", book_title: book.title.inspect, at: activity.updated_at %>
+  <% end %>
 <% else %>
   <%= t ".removed" %>
 <% end %>

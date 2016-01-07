@@ -12,7 +12,7 @@
       <%= render "favorite_books" %>
     </div>
     <%= render "shared/stats" %>
-    <%= render "follow_form" if user_signed_in? %>
+    <%= render "follow_form" if user_signed_in? && !current_user.admin? %>
     <%= render "followers" %>
     <%= render "followings" %>
   </div>

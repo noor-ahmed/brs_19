@@ -9,13 +9,13 @@
   <% @users.each do |user| %>
     <tr>
       <td>
-        <%= link_to user.name, user %>
+        <%= link_to user.name, admin_user_path(user) %>
       </td>
       <td><%= user.email %></td>
       <td><%= user.role %></td>
       <td>
       <% unless user.admin? %>
-        <%= link_to t(".delete"), admin_user_path(user), class: "btn btn-danger", 
+        <%= link_to t(".delete"), admin_user_path(user), class: "btn btn-danger",
           method: :delete, data: {confirm: t(".confirmation")} %>
       <% end %>
       </td>
