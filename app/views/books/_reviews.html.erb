@@ -9,16 +9,17 @@
       <% @reviews.each do |review| %>
         <%= link_to review.content, book_review_path(book_id: @book.id, id: 
           review.id), class: "list-group-item" %>
+        <br>
         <small class="col-md-offset-1">
           <%= t ".by" %> <%= link_to review.user.name, user_path(review.user) %>
         </small>
-        <% if can?(:destroy, review) %>
+        <% if can? :destroy, review %>
           <small>
             <%= link_to t(".edit"), edit_book_review_path(book_id: @book.id,
               id: review), class: "btn btn-primary btn-xs" %>
             <%= link_to t(".delete"), book_review_path(book_id: @book.id, 
               id: review), method: :delete, data:{confirm: t(:confirmation)}, 
-              class: "btn btn-primary btn-xs" %>
+              class: "btn btn-danger btn-xs" %>
           </small>                
         <% end %>
       <% end %>

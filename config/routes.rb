@@ -18,7 +18,7 @@ Rails.application.routes.draw do
       resource :users_books, only: :update
     end
 
-    resources :reviews do
+    resources :reviews, only: :show do
       resources :comments
     end
 

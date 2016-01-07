@@ -19,13 +19,13 @@ class CommentsController < ApplicationController
     if @comment.update_attributes comment_params
       flash[:success]= t "comments.comment_updated"
     end
-    redirect_to book_path review.book
+    redirect_to book_review_path review.book, review
   end
 
   def destroy
     review = @comment.review
     @comment.destroy
-    redirect_to book_path review.book
+    redirect_to book_review_path review.book, review
   end
 
   private

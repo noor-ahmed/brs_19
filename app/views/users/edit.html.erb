@@ -3,8 +3,8 @@
   <div class="col-md-6 col-md-offset-3">
     <%= form_for current_user do |f| %>
       <div class="form_group">
-        <%= f.label :image, t(".upload_image") %>
-        <%= f.file_field :image %>
+        <%= f.label :image, t(".upload_image"), class: "control-label" %>
+        <%= f.file_field :image, class: "form-control" %>
       </div>
       <br><br>
       <center><%= f.submit class: "btn btn-primary" %></center>

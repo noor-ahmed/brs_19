@@ -18,7 +18,7 @@ class RequestsController < ApplicationController
 
   def destroy
     @request.destroy
-    flash[:success] = t ".delete"
+    flash[:warning] = t ".delete"
     redirect_to requests_path
   end
 
