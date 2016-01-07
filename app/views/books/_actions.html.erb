@@ -6,7 +6,7 @@
     <div class="row">
       <div class="col-md-4 col-md-offset-1">
         <% unless @users_book.read? %>
-          <%= form_for @users_book, url: book_users_books_path(@book), html: 
+          <%= form_for @users_book, url: book_users_books_path(@book), html:
             {method: :put} do |f| %>
             <%= f.hidden_field :update_reading_status %>
             <% if @users_book.new_record? || @users_book.unread? %>
@@ -14,14 +14,20 @@
             <% else %>
               <%= f.submit t(".complete_reading"), class: "btn btn-info" %>
             <% end %>
-          <% end %>          
-        <% end %>        
+          <% end %>
+        <% end %>
       </div>
       <div class="col-md-4">
-        <%= link_to t(".add_to_favorite"), "#", class: "btn btn-success" %>
+        <% if @users_book.new_record? || !@users_book.favorite? %>
+          <%= form_for @users_book, url: book_users_books_path(@book), html:
+            {method: :put} do |f| %>
+            <%= f.hidden_field :mark_favorite %>
+            <%= f.submit t(:favorite), class: "btn btn-info" %>
+          <% end %>
+        <% end %>
       </div>
       <div class="col-md-3">
-        <%= link_to t(".request_book"), new_request_path, class: 
+        <%= link_to t(".request_book"), new_request_path, class:
           "btn btn-primary" %>
       </div>
     </div>
