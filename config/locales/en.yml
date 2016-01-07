@@ -138,6 +138,9 @@ en:
       add_comment: Add Comment
       comment: Comment
       new_comment: Content
+    edit:
+      edit_comment: Edit Comment
+  edit_text: Update
   confirmation: Are You Sure?
   contact: Contact
   delete: Delete
