@@ -1,0 +1,8 @@
+<div class="col-md-3">
+  <%= image_tag @user.image.url(:thumb), class: "img-thumbnail" %>
+  <div class="well">
+    <label><%= @user.name %></label>
+    <hr>
+    <label><%= @user.email %></label>
+  </div>
+</div>
