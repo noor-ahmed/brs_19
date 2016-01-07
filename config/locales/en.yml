@@ -182,12 +182,16 @@ en:
     UsersBook:
       favorite:
         message: has marked %{book_title} as favorite at %{at}
+        removed: has marked a book as favorite which got removed
       read:
         message: has finished reading %{book_title} at %{at}
+        removed: has finished reading a book which got removed
       reading:
         message: has started reading %{book_title} at %{at}
+        removed: has started reading a book which got removed
       favorite:
         message: has marked %{book_title} as favorite at %{at}
+        removed: has marked a book as favorite which got removed
     Comment:
       create:
         message: has commented on a review of %{book_title} at %{at}

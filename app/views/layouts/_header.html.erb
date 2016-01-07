@@ -4,10 +4,10 @@
     <nav>
       <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in? %>
-            <li><%= link_to t(".home"), current_user %></li>
-          <% if current_user.admin? %>            
+
+          <% if current_user.admin? %>
             <%= render "layouts/admin_header" %>
-          <% else %>            
+          <% else %>
             <%= render "layouts/user_header" %>
           <% end %>
           <li class="dropdown">

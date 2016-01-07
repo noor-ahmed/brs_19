@@ -1,7 +1,12 @@
 <div class="panel-body">
   <div class="list-group">
     <% @favourited_books.each do |book| %>
-      <%= link_to book.title, book_path(book), class: "list-group-item" %>
+      <% unless current_user.admin? %>
+        <%= link_to book.title, book_path(book), class: "list-group-item" %>
+      <% else %>
+        <%= link_to book.title, admin_book_path(book),
+          class: "list-group-item" %>
+      <% end %>
     <% end %>
   </div>
 </div>
