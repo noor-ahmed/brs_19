@@ -4,22 +4,24 @@
   </div>
   <div class="panel-body">
     <div class="list-group">
-      <% @comments.each do |comment| %>
-        <%= comment.content %>
-        <span class="timestamp">
+      <% @comments.each do |comment| %>        
+        <span class="list-group-item">
+          <%= comment.content %>
           <%= t "comments.commented" %>
           <%= time_ago_in_words comment.created_at %>
-          <%= t ".ago" %> <%= link_to comment.user.name %><br/>
-        </span>
-        <% if can? :destroy, comment %>
-          <%= link_to t(:delete), review_comment_path(@review, comment),
-            method: :delete, data: {confirm: t(:confirmation)},
-            class: "btn btn-danger" %>
-        <% end %>
-        <% if can? :edit, comment %>
-          <%= link_to t(:edit_text), edit_review_comment_path(@review, comment),
-            class: "btn btn-info" %><br/>
-        <% end %>
+            <%= t ".ago" %> <%= link_to comment.user.name %>
+            &nbsp;
+            <% if can? :destroy, comment %>
+              <%= link_to t(:delete), review_comment_path(@review, comment),
+                method: :delete, data: {confirm: t(:confirmation)},
+                class: "btn btn-danger btn-xs" %>
+            <% end %>
+            &nbsp;
+            <% if can? :edit, comment %>
+              <%= link_to t(:edit_text), edit_review_comment_path(@review, comment),
+                class: "btn btn-info btn-xs" %>
+            <% end %>
+          </span>
       <% end %>
     </div>
   </div>

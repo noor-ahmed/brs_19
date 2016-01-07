@@ -1,23 +1,36 @@
-$(document).ready(function() {
-  $("#book_publish_date").datepicker({format: "dd/mm/yyyy"});
-  $("#rating").raty({
-    readOnly : true,
-    path : "/assets",
-    score : function() {
-      return $(this).attr("data-rating");
-    }
-  });
+window.onInit = function(handler) {
+  $(document).on("ready page:change", handler)
+}
+onInit(function() {
+  $(document).ready(function() {
+    $("#book_publish_date").datepicker({format: "dd/mm/yyyy"});
+    $("#rating").raty({
+      readOnly : true,
+      path : "/assets",
+      score : function() {
+        return $(this).attr("data-rating");
+      }
+    });
 
-  $("#rating_for_review").raty({
-    targetScore : "#rating_review",
-    path : "/assets"
-  });
+    $("#review_rating").raty({
+      readOnly : true,
+      path : "/assets",
+      score : function() {
+        return $(this).attr("data-rating");
+      }
+    });
 
-  $("#edit_rating_for_review").raty({
-    targetScore : "#edit_rating_review",
-    path : "/assets",
-    score : function() {
-      return $(this).attr("data-rating");
-    }
+    $("#rating_for_review").raty({
+      targetScore : "#rating_review",
+      path : "/assets"
+    });
+
+    $("#edit_rating_for_review").raty({
+      targetScore : "#edit_rating_review",
+      path : "/assets",
+      score : function() {
+        return $(this).attr("data-rating");
+      }
+    });
   });
 });

@@ -11,6 +11,7 @@ class Ability
           user.send("#{item.to_s.underscore}s").include? object
         end
       end
+      can [:edit, :update], User, id: user.id
       relationships = user.active_relationships + user.passive_relationships
       can :manage, Relationship do |relationship|
         relationships.include? relationship

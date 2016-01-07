@@ -14,7 +14,8 @@
       <dd><%= @book.num_of_pages %></dd>
       <dt><%= t ".category" %></dt>
       <dd>
-        <%= link_to @book.category.name, category_path(@book.category) %>
+        <%= link_to @book.category.name, send("#{role_prefix}category_path", 
+          @book.category) %>
       </dd>
       <dt><%= t ".rating" %></dt>
       <dd><div id="rating" data-rating="<%= @book.rating %>"></div></dd>

@@ -4,9 +4,14 @@
     <%= render "books/image_gallery" %>
   </div>
   <div class="col-md-9">
-    <%= render "books/details" %>    
-    <%= render role_prefix == "admin" ? "books/admin_actions" : "books/actions" %>
-    <%= render "books/reviews" %>
-    <%= render "books/review_form" %>
+    <% if role_prefix == "admin" %>
+      <%= render "books/details", role_prefix: "admin_" %>
+      <%= render "books/admin_actions" %>
+    <% else %>
+      <%= render "books/details", role_prefix: "" %>
+      <%= render "books/actions" %>
+      <%= render "books/reviews" %>
+      <%= render "books/review_form" %>
+    <% end %>    
   </div>
 </div>

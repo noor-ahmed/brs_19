@@ -4,11 +4,10 @@
     <%= render "books/image_gallery" %>
   </div>
   <div class="col-md-9">
-    <%= render "books/details" %>
+    <%= render "books/details", role_prefix: "" %>
     <%= render "books/actions" %>
     <%= render "books/reviews" %>
     <%= render "books/review_show" %>
-    <%= render "comments/form" %>
     <%= render "comments/comments" %>
   </div>
 </div>

@@ -7,11 +7,13 @@
       </div>
       <%= link_to image_tag(book.book_images.first.image.url(:thumb), class: 
         "img-thumbnail"), send("#{role_prefix}book_path", book) %>
-        <br>        
-        <div class="row text-center">
-          <%= link_to t(:book_index_review_btn), book_path(book), 
-            class: "btn btn-xs btn-info" %>
-        </div>        
+        <br>
+        <% unless role_prefix == "admin_" %>
+          <div class="text-center">
+            <%= link_to t(:book_index_review_btn), book_path(book), 
+              class: "btn btn-xs btn-info" %>
+          </div>
+        <% end %>
     </div>
   <% end %>  
 </div>
