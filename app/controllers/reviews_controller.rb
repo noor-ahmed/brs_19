@@ -1,6 +1,6 @@
 class ReviewsController < ApplicationController
   before_action :load_details, only: [:show, :edit]
-  
+
   def show
     @comment = current_user.comments.build
     @comments = @review.comments.all.from_last
@@ -12,6 +12,7 @@ class ReviewsController < ApplicationController
     else
       flash[:alert] = t ".failed"
     end
+    @review.create_activity key: "Review.create", owner: current_user
     redirect_to book_path id: @review.book_id
   end
 
@@ -41,7 +42,7 @@ class ReviewsController < ApplicationController
     @book = @review.book
     @book_images = @book.book_images
     @reviews = @book.reviews.page(params[:page]).per 10
-    @users_book = UsersBook.find_by_user_id_and_book_id(current_user, @book) || 
+    @users_book = UsersBook.find_by_user_id_and_book_id(current_user, @book) ||
       UsersBook.new
   end
 end

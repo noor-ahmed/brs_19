@@ -6,6 +6,7 @@ class CommentsController < ApplicationController
   def create
     @comment.user = current_user
     @comment.save
+    @comment.create_activity key: "Comment.create", owner: current_user
     redirect_to :back
   end
 
@@ -16,7 +17,7 @@ class CommentsController < ApplicationController
   def update
     review = Review.find params[:review_id]
     if @comment.update_attributes comment_params
-      flash[:success]= t "comments.comment_udpated"
+      flash[:success]= t "comments.comment_updated"
     end
     redirect_to book_path review.book
   end

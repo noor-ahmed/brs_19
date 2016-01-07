@@ -140,6 +140,7 @@ en:
       new_comment: Content
     edit:
       edit_comment: Edit Comment
+    comment_updated: Successfully updated
   edit_text: Update
   confirmation: Are You Sure?
   contact: Contact
@@ -182,9 +183,21 @@ en:
         message: has started reading %{book_title} at %{at}
       favorite:
         message: has marked %{book_title} as favorite at %{at}
-    comment:
+    Comment:
       create:
         message: has commented on a review of %{book_title} at %{at}
+        removed: has deleted this comment
+    Review:
+      create:
+        message: has written a review of %{book_title} at %{at}
+        removed: has removed this review
+    relationship:
+      create:
+        message: has started following %{user_name} at %{at}
+        removed: has followed a user which was later removed
+      destroy:
+        message: has unfollowed %{user_name} at %{at}
+        removed: has unfollowed a user
   request_failed: Request can not be completed
   request_success: Request successfully processed
   requests:
