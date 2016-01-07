@@ -1,8 +1,6 @@
 <% provide :title, @user.name %>
 <div class="row">
-  <div class="col-md-3">
-    <%= image_tag @user.image.url(:thumb), class: "img-thumbnail" %>
-  </div>
+  <%= render "user_profile" %>
   <div class="col-md-9">
     <%= render "activity" %>
     <div class="panel panel-info">

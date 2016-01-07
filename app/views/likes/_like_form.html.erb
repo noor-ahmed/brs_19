@@ -1,4 +1,4 @@
-<div id="<%= activity.id %>">
+<div id="<%= activity.id %>" class="pull-right">
   <% if current_user.likes.find_by activity_id: activity.id %>
     <%= render "likes/unlike", activity: activity %>
   <% else %>
