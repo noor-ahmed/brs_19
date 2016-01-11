@@ -38,6 +38,7 @@ class Admin::CategoriesController < ApplicationController
 
   private
   def category_params
-    params.require(:category).permit :id, :name, :image
+    params.require(:category).permit :id, :name, :image, :image_cache, 
+      :remote_image_url, :_destroy
   end
 end

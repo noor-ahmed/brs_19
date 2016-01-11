@@ -1,7 +1,11 @@
 <% provide :title, @category.name %>
-<div class="center">
-  <h1><%= @category.name %></h1>
+<div class="center clearfix">
+  <%= image_tag(@category.image.url(:thumb), class: "img-thumbnail col-md-3") %>
+  <h2>
+    <%= @category.name %>
+    <br>
+    <small><%= t ".num_of_books" %>: <%= @category.books.count %></small>
+  </h2>
 </div>
 <hr />
-
 <%= render "books/grid", role_prefix: "admin_" %>

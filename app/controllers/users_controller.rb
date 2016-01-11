@@ -20,6 +20,7 @@ class UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit :image
+    params.require(:user).permit :image, :image_cache, :remote_image_url, 
+      :_destroy
   end
 end
