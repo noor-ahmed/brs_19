@@ -1,18 +1,31 @@
-<div class="row">
+<div class="row panel panel-success">
   <%= search_form_for @search do |f| %>
     <div class="form-group col-sm-6 form-inline">
-    <div class="form-group">
-      <%= f.label :title_cont, t(".title") %>
-      <%= f.text_field :title_cont, class: "form-control" %>
-    </div>
-    <div class="form-group">
-      <%= f.label :category_id_eq, t(".category") %>
-      <%= f.select :category_id_eq, options_from_collection_for_select(
-        @categories, :id, :name, @search.category_id_eq), {prompt: false},
-        {class: "form-control"} %>
-    </div>
-      <%= f.submit t(".submit"), class: "btn btn-primary" %>    
+      <div class="form-group">
+        <%= f.label :title_cont, t(".title") %>
+        <%= f.text_field :title_cont, class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :category_id_eq, t(".category") %>
+        <%= f.select :category_id_eq, options_from_collection_for_select(
+          @categories, :id, :name, @search.category_id_eq), {include_blank: true},
+          {class: "form-control"} %>
+      </div>
+      <div class="form-group">
+        <label for="contain"><%= f.label :rating_gteq, t(:between) %></label>
+        <%= f.select :rating_gteq, (1..5), class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <label for="contain"><%= f.label :rating_lteq, t(:and) %></label>
+        <%= f.select :rating_lteq, (1..5), class: "form-control" %>
+      </div>
+      <div class="form-group form-inline">
+        <label for="contain"><%= f.label :favorite_searching, t(:all_books) %></label>
+        <%= f.radio_button :favorite_searching, "all #{current_user.id}", checked: true %>
+        <label for="contain"><%= f.label :filter_book, t(:favourite) %></label>
+        <%= f.radio_button :favorite_searching, "favourited_by  #{current_user.id}"%>
+        </div>
+      <%= f.submit t(".submit"), class: "btn btn-primary" %>
     </div>
   <% end %>
 </div>
-<hr />

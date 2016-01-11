@@ -12,8 +12,28 @@ class Book < ActiveRecord::Base
 
   accepts_nested_attributes_for :book_images, allow_destroy: true
 
-  scope :favourited_by, ->(user) {
-    joins(users_books: :user).where(users: {id: user.id}, users_books:
-      {favorite: true})
+  scope :favourited_by, ->(user_id) {
+    joins(users_books: :user).where(users: {id: user_id}, users_books:
+    {favorite: true})
   }
+
+  scope :favorite_searching, ->(criteria) do
+    search = criteria.split
+    case search[0]
+      when "all"
+        Book.all
+      else
+        favourited_by search[1].to_i
+    end
+  end
+
+  private
+  class << self
+    def ransackable_scopes auth_object = nil
+      [:favorite_searching]
+    end
+  end
 end
+
+
+
