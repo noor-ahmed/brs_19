@@ -6,7 +6,9 @@ onInit(function() {
     $("#book_publish_date").datepicker({format: "dd/mm/yyyy"});
     $("#rating").raty({
       readOnly : true,
-      path : "/assets",
+      starHalf: '<%= image_path("star-half.png") %>',
+      starOn: '<%= image_path("star-on.png") %>',
+      starOff: '<%= image_path("star-off.png") %>',
       score : function() {
         return $(this).attr("data-rating");
       }
@@ -14,7 +16,9 @@ onInit(function() {
 
     $("#review_rating").raty({
       readOnly : true,
-      path : "/assets",
+      starHalf: '<%= image_path('star-half.png') %>',
+      starOn: '<%= image_path('star-on.png') %>',
+      starOff: '<%= image_path('star-off.png') %>',
       score : function() {
         return $(this).attr("data-rating");
       }
@@ -22,12 +26,16 @@ onInit(function() {
 
     $("#rating_for_review").raty({
       targetScore : "#rating_review",
-      path : "/assets"
+      starHalf: '<%= image_path('star-half.png') %>',
+      starOn: '<%= image_path('star-on.png') %>',
+      starOff: '<%= image_path('star-off.png') %>',
     });
 
     $("#edit_rating_for_review").raty({
       targetScore : "#edit_rating_review",
-      path : "/assets",
+      starHalf: '<%= image_path('star-half.png') %>',
+      starOn: '<%= image_path('star-on.png') %>',
+      starOff: '<%= image_path('star-off.png') %>',
       score : function() {
         return $(this).attr("data-rating");
       }
