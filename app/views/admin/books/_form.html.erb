@@ -29,6 +29,7 @@
       </div>
       <%= f.fields_for :book_images do |bif| %>
         <%= bif.label :image, t(".upload_image") %>
+        <%= bif.hidden_field :image_cache %>
         <%= bif.file_field :image %>
         <%= bif.link_to_remove "Remove this image" %>
       <% end %>

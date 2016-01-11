@@ -24,6 +24,7 @@ en:
       index:
         confirmation: Are you sure you want to delete this category?
         delete: Delete
+        edit: Edit
         name: Name
         page_tilte: All Categories
       new:
@@ -32,6 +33,7 @@ en:
       show:
         book_under_category: Books Under This Category
         category_show: Category Details
+        num_of_books: Number of Books
       update:
         delete: Delete
         success: Category updated successfully
@@ -87,6 +89,7 @@ en:
     admin_actions:
       confirmation: Ary you sure you want to delete this book?
       delete: Delete
+      edit: Edit
     review_edit_form:
       submit: Update Review
     review_form:
@@ -130,6 +133,7 @@ en:
       activity_message_ago: ago
       commented: has been commented
       title_activities: Activity Log of Comment
+    comment_updated: Successfully updated
     comments:
       ago: ago by
       comments: Comments
@@ -139,10 +143,6 @@ en:
       add_comment: Add Comment
       comment: Comment
       new_comment: Content
-    edit:
-      edit_comment: Edit Comment
-    comment_updated: Successfully updated
-  edit_text: Update
   confirmation: Are You Sure?
   contact: Contact
   delete: Delete
@@ -179,6 +179,14 @@ en:
   make_sure: Are You Sure?
   mark_favorite: has marked %{book_title} as favorite at %{at}
   public_activity:
+    Comment:
+      create:
+        message: has commented on a review of %{book_title} at %{at}
+        removed: has deleted this comment
+    Review:
+      create:
+        message: has written a review of %{book_title} at %{at}
+        removed: has removed this review
     UsersBook:
       favorite:
         message: has marked %{book_title} as favorite at %{at}
@@ -189,17 +197,6 @@ en:
       reading:
         message: has started reading %{book_title} at %{at}
         removed: has started reading a book which got removed
-      favorite:
-        message: has marked %{book_title} as favorite at %{at}
-        removed: has marked a book as favorite which got removed
-    Comment:
-      create:
-        message: has commented on a review of %{book_title} at %{at}
-        removed: has deleted this comment
-    Review:
-      create:
-        message: has written a review of %{book_title} at %{at}
-        removed: has removed this review
     relationship:
       create:
         message: has started following %{user_name} at %{at}
@@ -210,6 +207,10 @@ en:
   request_failed: Request can not be completed
   request_success: Request successfully processed
   requests:
+    create:
+      success: Successfully request for new book
+    destroy:
+      delete: Successfully Canceled Book Request
     index:
       author: Author
       book_list: Requested Book List
@@ -221,10 +222,6 @@ en:
       title: Title
     new:
       title: Request new book
-    create:
-      success: Successfully request for new book
-    destroy:
-      delete: Successfully Canceled Book Request
   reviews:
     create:
       failed: Review has not been posted

@@ -5,6 +5,10 @@
   <div class="panel-body">
     <div class="row">
       <div class="col-md-2">
+        <%= link_to t(".edit"), edit_admin_book_path(@book), 
+          class: "btn btn-success" %>
+      </div>
+      <div class="col-md-2">
         <%= link_to t(".delete"), admin_book_path(@book), method: :delete,
           class: "btn btn-danger", data: {confirm: t(".confirmation")} %>
       </div>

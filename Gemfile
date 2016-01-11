@@ -23,6 +23,7 @@ gem "bootstrap-datepicker-rails", "~> 1.5"
 gem "public_activity"
 gem "Bootstrap-Image-Gallery-rails", "~> 1.0", ">= 1.0.1.3.1.0"
 gem "kaminari", "~> 0.16.3"
+gem "cloudinary", "~> 1.1", ">= 1.1.2"
 
 group :development, :test do
   gem "factory_girl_rails"
